@@ -1,0 +1,40 @@
+.home {
+    padding: 0;
+
+    .slide {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 60rem;
+        background: url('../../assets/home-slide-2.jpg');
+        background-size: cover !important;
+        background-position: center !important;
+
+        .content {
+            width: 50rem;
+
+            h3 {
+                font-size: 5rem;
+                text-transform: capitalize;
+                color: #444;
+                color: #fff;
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 2;
+                color: #777;
+                color: #eee;
+                padding: 1rem 0;
+            }
+        }
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: #0eb582;
+    }
+}
+  
