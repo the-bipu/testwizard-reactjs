@@ -1,0 +1,50 @@
+.contact {
+    .icons-container {
+        margin-bottom: 3rem;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 2rem;
+
+        .icons {
+            text-align: center;
+            padding: 3rem 2rem;
+            border: 0.1rem solid #0eb582;
+            background: #f0fdfa;
+
+            i {
+                height: 6rem;
+                width: 6rem;
+                line-height: 6rem;
+                font-size: 2rem;
+                border-radius: 50%;
+                margin-bottom: .5rem;
+                color: #fff;
+                background: #0eb582;
+            }
+
+            h3 {
+                font-size: 2rem;
+                text-transform: capitalize;
+                color: #444;
+                padding: .5rem 0;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2;
+                color: #777;
+            }
+          }
+      }
+}
+
+.logo-container {
+    text-align: center;
+
+    img {
+        height: 10rem;
+        pointer-events: none;
+    }
+}
