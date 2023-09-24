@@ -1,0 +1,53 @@
+.subjects {
+    .box-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+        gap: 2rem;
+
+        .box {
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 0.1rem solid #0eb582;
+            background: #f0fdfa;
+            /* cursor: pointer; */
+
+            img {
+                height: 10rem;
+                margin-bottom: .7rem;
+                border-radius: 50%;
+            }
+
+            h3 {
+                font-size: 1.7rem;
+                text-transform: capitalize;
+                color: #444;
+                padding: .5rem 0;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2;
+                color: #777;
+            }
+
+            .test_button {
+                color: #000;
+                background: transparent;
+                margin-top: 1rem;
+                padding: .5rem 2rem;
+                font-size: 1.8rem;
+                border: 0.1rem solid #0eb582;
+                border-radius: 8px;
+                cursor: pointer;
+                text-transform: capitalize;
+            }
+
+            .test_button:hover{
+                color: #fff;
+                background: #0eb582;
+            }
+          }
+      }
+}
