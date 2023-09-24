@@ -1,0 +1,94 @@
+.footer {
+    background: #f0fdfa;
+
+    .box-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        /* gap: 7rem; */
+
+        .box {
+            h3 {
+                font-size: 2.2rem;
+                text-transform: capitalize;
+                color: #444;
+                padding: 1rem 0;
+
+                i {
+                    color: #0eb582;
+                }
+            }
+
+            .share {
+                margin-top: 1rem;
+
+                a {
+                    height: 4rem;
+                    width: 4rem;
+                    line-height: 4.5rem;
+                    font-size: 1.7rem;
+                    background-color: #0eb582;
+                    color: #fff;
+                    margin-right: .3rem;
+                    text-align: center;
+                }
+
+                a:hover {
+                    background-color: #444;
+                }
+            }
+
+            .p-box {
+                font-size: 1.7rem;
+            }
+
+            .p-contact {
+                font-size: 1.7rem;
+            }
+
+            .link {
+                font-size: 1.7rem;
+                line-height: 2;
+                color: #777;
+                padding: .4rem 0;
+                display: block;
+                /* margin-left: 30px; */
+            }
+
+            .link:hover {
+                color: #0eb582;
+                text-decoration: underline;
+            }
+
+            p {
+                font-size: 1.5rem;
+                line-height: 2;
+                color: #777;
+                padding: 1rem 0;
+            }
+
+            .email {
+                width: 100%;
+                padding: 1.2rem 1.4rem;
+                font-size: 1.6rem;
+                border: 0.1rem solid #0eb582;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        font-size: 2rem;
+        text-transform: capitalize;
+        color: #444;
+        border-top: 0.1rem solid #0eb582;
+
+        span {
+            color: #0eb582;
+        }
+    }
+}
