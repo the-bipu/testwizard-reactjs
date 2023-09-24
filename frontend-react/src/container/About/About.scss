@@ -1,0 +1,50 @@
+.box {
+    a {
+        text-decoration: none; 
+        color: #000; 
+        font-weight: 600;
+
+        button {
+            display: inline-block; 
+            margin-top: 1rem; 
+            padding: .5rem 2rem; 
+            font-size: 1.8rem; 
+            border: 0.1rem solid #0eb582; 
+            border-radius: 8px; background: transparent; 
+            color: #000; 
+            cursor: pointer; 
+            text-transform: capitalize;
+        }
+    
+        button:hover {
+            background: var(--green-color);
+            color: #fff;
+        }
+    }
+
+    a:hover {
+        color: #fff;
+    }
+}
+
+.view {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .view-more-sub button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    border: 0.1rem solid #0eb582;
+    background: #f0fdfa;
+    color: #0eb582;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+  
+  .view-more-sub:hover button {
+    background: #0eb582;
+    color: #fff;
+  }
