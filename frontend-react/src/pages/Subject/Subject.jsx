@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './Subject.scss';
 
 import { Footer } from '../../container';
 import { Navbar } from '../../components';
 
+import { urlFor, client } from '../../client';
+
 const Subject = () => {
+    const [subject, setSubject] = useState([]);
+
+    useEffect(() => {
+        const query = '*[_type == "subject"]';
+    
+        client.fetch(query)
+          .then((data) => setSubject(data))
+      }, [])
+
   return (
     <div>
         <Navbar />
@@ -16,99 +27,28 @@ const Subject = () => {
         </section>
 
         <section className='subjects'>
-        <h1 class="heading">Important subjects</h1>
+        <h1 className="heading">Important subjects</h1>
 
-        <div class="box-container">
+            <div className="box-container--subject">
 
-            <div class="box">
-                <img src="" alt="" />
-                <h3>computer <br /> fundamentals</h3>
-                <p>4 modules</p>
-                <a href="">
-                    <button>Take Test</button></a>
-            </div>
-
-            <div class="box">
-                <img src="" alt="" />
-                <h3>computer <br /> fundamentals</h3>
-                <p>4 modules</p>
-                <a href="">
-                    <button>Take Test</button></a>
-            </div>
-
-            <div class="box">
-                <img src="" alt="" />
-                <h3>computer <br /> fundamentals</h3>
-                <p>4 modules</p>
-                <a href="">
-                    <button>Take Test</button></a>
-            </div>
-
-            <div class="box">
-                <img src="" alt="" />
-                <h3>computer <br /> fundamentals</h3>
-                <p>4 modules</p>
-                <a href="">
-                    <button>Take Test</button></a>
-            </div>
-
-            <div class="box">
-                <img src="" alt="" />
-                <h3>computer <br /> fundamentals</h3>
-                <p>4 modules</p>
-                <a href="">
-                    <button>Take Test</button></a>
-            </div>
-
-            </div>
-
-            <br /><br /><br />
-
-            <h1 class="heading">important subjects notes</h1>
-
-            <div class="box-container">
-
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <div class="box">
-                        <img src="" alt="" />
-                        <h3>computer <br /> fundamentals</h3>
-                        <p>12 modules</p>
+                {subject.map((subject, index) => (
+                    <div className="box" key={subject.name + index}>
+                        <img src={urlFor(subject.imgUrl)} alt={subject.name} />
+                        <h3>{subject.name}</h3>
+                        <p>{subject.modules}</p>
+                        <a href={subject.moduleLink}>
+                            <button>Take Test</button>
+                        </a>
+                        &nbsp;&nbsp;
+                        <a href={subject.moduleLink}>
+                            <button>Notes</button>
+                        </a>
                     </div>
-                </a>
-
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <div class="box">
-                        <img src="" alt="" />
-                        <h3>computer <br /> fundamentals</h3>
-                        <p>12 modules</p>
-                    </div>
-                </a>
-
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <div class="box">
-                        <img src="" alt="" />
-                        <h3>computer <br /> fundamentals</h3>
-                        <p>12 modules</p>
-                    </div>
-                </a>
-
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <div class="box">
-                        <img src="" alt="" />
-                        <h3>computer <br /> fundamentals</h3>
-                        <p>12 modules</p>
-                    </div>
-                </a>
-                
-                <a href="" target="_blank" rel="noopener noreferrer">
-                    <div class="box">
-                        <img src="" alt="" />
-                        <h3>computer <br /> fundamentals</h3>
-                        <p>12 modules</p>
-                    </div>
-                </a>
+                ))}
 
             </div>
+
+        <br /><br /><br />
 
         </section>
 

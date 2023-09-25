@@ -1,9 +1,9 @@
 .subjects {
-    .box-container {
+    .box-container--subject {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+        -ms-grid-columns: (minmax(18rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
         gap: 2rem;
 
         .box {
@@ -14,7 +14,7 @@
             /* cursor: pointer; */
 
             img {
-                height: 10rem;
+                height: 13rem;
                 margin-bottom: .7rem;
                 border-radius: 50%;
             }
