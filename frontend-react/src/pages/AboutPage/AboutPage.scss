@@ -159,6 +159,27 @@
             border: 0.1rem solid #0eb582;
             background: #f0fdfa;
             cursor: pointer;
+            
+            .share {
+                align-items: center;
+                margin-top: 1rem;
+
+                a {
+                    height: 4rem;
+                    width: 4rem;
+                    line-height: 4.5rem;
+                    font-size: 1.7rem;
+                    background-color: #0eb582;
+                    color: #fff;
+                    text-align: center;
+                    align-items: center;
+                    margin-left: 5px;
+                }
+
+                a:hover {
+                    background-color: #444;
+                }
+            }
 
             img {
                 margin-bottom: .7rem;

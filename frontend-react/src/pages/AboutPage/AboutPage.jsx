@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { images } from '../../constants';
 import './AboutPage.scss';
@@ -6,7 +6,19 @@ import './AboutPage.scss';
 import { Footer } from '../../container';
 import { Navbar } from '../../components';
 
+import { urlFor, client } from '../../client';
+
 const AboutPage = () => {
+
+    const [abouts, setAbouts] = useState([]);
+
+    useEffect(() => {
+        const query = '*[_type == "abouts"]';
+
+        client.fetch(query)
+            .then((data) => setAbouts(data))
+        }, [])
+
   return (
     <div>
         <Navbar />
@@ -46,44 +58,20 @@ const AboutPage = () => {
                 <h1 className="heading">our team</h1>
                 <section className="us-section">
 
-                    <div className="box-us-section">
-                    <img src="" alt="" />
-                    <h3>Name</h3>
-                    <p>Front-end Developer</p>
-                    <div className="share">
-                        <a href="#" className="fab fa-facebook-f"></a>
-                        <a href="#" className="fab fa-twitter"></a>
-                        <a href="#" className="fab fa-instagram"></a>
-                        <a href="#" className="fab fa-linkedin"></a>
-                    </div><br />
-                    <button className="box-button"><a href="more-about.php">More</a></button>
-                    </div>
-
-                    <div className="box-us-section">
-                    <img src="" alt="" />
-                    <h3>Name</h3>
-                    <p>Full-Stack Web Developer</p>
-                    <div className="share">
-                        <a href="#" className="fab fa-facebook-f"></a>
-                        <a href="#" className="fab fa-twitter"></a>
-                        <a href="#" className="fab fa-instagram"></a>
-                        <a href="#" className="fab fa-linkedin"></a>
-                    </div><br />
-                    <button className="box-button"><a href="more-about.php">More</a></button>
-                    </div>
-
-                    <div className="box-us-section">
-                    <img src="" alt="" />
-                    <h3>Name</h3>
-                    <p>Backend Developer</p>
-                    <div className="share">
-                        <a href="#" className="fab fa-facebook-f"></a>
-                        <a href="#" className="fab fa-twitter"></a>
-                        <a href="#" className="fab fa-instagram"></a>
-                        <a href="#" className="fab fa-linkedin"></a>
-                    </div><br />
-                    <button className="box-button"><a href="more-about.php">More</a></button>
-                    </div>
+                    {abouts.map((abouts, index) => (
+                        <div className="box-us-section" key={abouts.name + index}>
+                            <img src={urlFor(abouts.imgUrl)} alt={abouts.name} />
+                            <h3>{abouts.name}</h3>
+                            <p>{abouts.description}</p>
+                            <div className="share">
+                                <a href="#" className="fab fa-facebook-f"></a>
+                                <a href="#" className="fab fa-twitter"></a>
+                                <a href="#" className="fab fa-instagram"></a>
+                                <a href="#" className="fab fa-linkedin"></a>
+                            </div><br />
+                            <button className="box-button"><a href="more-about.php">More</a></button>
+                        </div>
+                    ))}
 
                 </section>
 
