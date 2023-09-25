@@ -24,40 +24,40 @@ const Subject = () => {
                 <img src="" alt="" />
                 <h3>computer <br /> fundamentals</h3>
                 <p>4 modules</p>
-                <a href="01_set_c_funda.php">
-                    <button class="test_button">Take Test</button></a>
+                <a href="">
+                    <button>Take Test</button></a>
             </div>
 
             <div class="box">
                 <img src="" alt="" />
                 <h3>computer <br /> fundamentals</h3>
                 <p>4 modules</p>
-                <a href="01_set_c_funda.php">
-                    <button class="test_button">Take Test</button></a>
+                <a href="">
+                    <button>Take Test</button></a>
             </div>
 
             <div class="box">
                 <img src="" alt="" />
                 <h3>computer <br /> fundamentals</h3>
                 <p>4 modules</p>
-                <a href="01_set_c_funda.php">
-                    <button class="test_button">Take Test</button></a>
+                <a href="">
+                    <button>Take Test</button></a>
             </div>
 
             <div class="box">
                 <img src="" alt="" />
                 <h3>computer <br /> fundamentals</h3>
                 <p>4 modules</p>
-                <a href="01_set_c_funda.php">
-                    <button class="test_button">Take Test</button></a>
+                <a href="">
+                    <button>Take Test</button></a>
             </div>
 
             <div class="box">
                 <img src="" alt="" />
                 <h3>computer <br /> fundamentals</h3>
                 <p>4 modules</p>
-                <a href="01_set_c_funda.php">
-                    <button class="test_button">Take Test</button></a>
+                <a href="">
+                    <button>Take Test</button></a>
             </div>
 
             </div>
@@ -70,7 +70,7 @@ const Subject = () => {
 
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <div class="box">
-                        <img src="images/subject-icon (1).jpg" alt="" />
+                        <img src="" alt="" />
                         <h3>computer <br /> fundamentals</h3>
                         <p>12 modules</p>
                     </div>
@@ -78,7 +78,7 @@ const Subject = () => {
 
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <div class="box">
-                        <img src="images/subject-icon (1).jpg" alt="" />
+                        <img src="" alt="" />
                         <h3>computer <br /> fundamentals</h3>
                         <p>12 modules</p>
                     </div>
@@ -86,7 +86,7 @@ const Subject = () => {
 
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <div class="box">
-                        <img src="images/subject-icon (1).jpg" alt="" />
+                        <img src="" alt="" />
                         <h3>computer <br /> fundamentals</h3>
                         <p>12 modules</p>
                     </div>
@@ -94,7 +94,7 @@ const Subject = () => {
 
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <div class="box">
-                        <img src="images/subject-icon (1).jpg" alt="" />
+                        <img src="" alt="" />
                         <h3>computer <br /> fundamentals</h3>
                         <p>12 modules</p>
                     </div>
@@ -102,7 +102,7 @@ const Subject = () => {
                 
                 <a href="" target="_blank" rel="noopener noreferrer">
                     <div class="box">
-                        <img src="images/subject-icon (1).jpg" alt="" />
+                        <img src="" alt="" />
                         <h3>computer <br /> fundamentals</h3>
                         <p>12 modules</p>
                     </div>

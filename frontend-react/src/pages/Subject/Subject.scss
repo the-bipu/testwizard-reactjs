@@ -32,21 +32,23 @@
                 color: #777;
             }
 
-            .test_button {
-                color: #000;
+            a {
+              .test_button {
+                color: #0eb582;
                 background: transparent;
                 margin-top: 1rem;
                 padding: .5rem 2rem;
                 font-size: 1.8rem;
                 border: 0.1rem solid #0eb582;
-                border-radius: 8px;
+                // border-radius: 8px;
                 cursor: pointer;
                 text-transform: capitalize;
-            }
+              }
 
-            .test_button:hover{
-                color: #fff;
-                background: #0eb582;
+              .test_button:hover{
+                  color: #fff;
+                  background: #0eb582;
+              }
             }
           }
       }
