@@ -14,16 +14,16 @@ const Footer = () => {
             <a href="https://goo.gl/maps/r3oSCoMUpr9RpK976" className="link"> &#x21aa; Sliet</a>
             <a href="http://academic.sliet.ac.in/bacholar-of-engineering/" className="link"> &#x21aa; Programmes</a>
             <a href="http://library.sliet.ac.in/e-resources/e-books/" className="link"> &#x21aa; E-Lib</a>
-            <a href="about.php" className="link"> &#x21aa; Webiste Team</a>
+            <a href="/AboutPage" className="link"> &#x21aa; Webiste Team</a>
          </div>
 
          <div className="box">
             <h3 className="h3-link">quick links</h3>
-            <a href="#" className="link"> &#x21aa; Home</a>
-            <a href="subject.php" className="link"> &#x21aa; Subject</a>
-            <a href="leet.php" className="link"> &#x21aa; Leet</a>
-            <a href="about.php" className="link"> &#x21aa; About</a>
-            <a href="contact.php" className="link"> &#x21aa; Contact</a>
+            <a href="/Home" className="link"> &#x21aa; Home</a>
+            <a href="/Subject" className="link"> &#x21aa; Subject</a>
+            <a href="/Leet" className="link"> &#x21aa; Leet</a>
+            <a href="/AboutPage" className="link"> &#x21aa; About</a>
+            <a href="/Contact" className="link"> &#x21aa; Contact</a>
          </div>
 
          <div className="box">
@@ -32,7 +32,7 @@ const Footer = () => {
             <a href="http://academic.sliet.ac.in/bacholar-of-engineering/" className="link"> &#x21aa; Sliet-Leet</a>
             <a href="https://wa.me/+917004817946" className="link"> &#x21aa; Ask questions</a>
             <a href="mailto:testwizardsliet@gmail.com" className="link"> &#x21aa; Send feedback</a>
-            <a href="terms.php" className="link"> &#x21aa; Terms and conditions</a>
+            <a href="/Terms" className="link"> &#x21aa; Terms and conditions</a>
          </div>
 
          <div className="box">
