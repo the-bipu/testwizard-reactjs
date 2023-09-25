@@ -1,103 +1,81 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './About.scss';
 
+import { urlFor, client } from '../../client';
+
 const About = () => {
+  const [subject, setSubject] = useState([]);
+  const [leet, setLeet] = useState([]);
+
+    useEffect(() => {
+        const query = '*[_type == "subject"]';
+    
+        client.fetch(query)
+          .then((data) => setSubject(data))
+    }, [])
+
+    useEffect(() => {
+        const query = '*[_type == "leet"]';
+    
+        client.fetch(query)
+          .then((data) => setLeet(data))
+      }, [])
+
   return (
     <div>
       <section className="subjects">
 
-        <h1 className="heading">our popular subjects</h1>
+        <h1 className="heading">main subjects</h1>
 
         <div className="box-container">
 
-          <div className="box">
-              <img src="" alt="" />
-              <h3>computer <br /> fundamentals</h3>
-              <p>4 modules</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>operating <br /> system</h3>
-              <p>4 modules</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>internet and web technology</h3>
-              <p>4 modules</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>computer <br /> programming</h3>
-              <p>4 modules</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>data <br /> structure</h3>
-              <p>4 modules</p>
-                <a href=""><button>Visit</button></a>
-          </div>
+          {subject.slice(0, 4).map((subject, index) => (
+            <div class="box" key={subject.name + index}>
+                <img src={urlFor(subject.imgUrl)} alt={subject.name} />
+                <h3>{subject.name}</h3>
+                <p>{subject.modules}</p>
+                <a href={subject.moduleLink}>
+                    <button>Take Test</button>
+                </a>
+                &nbsp;&nbsp;
+                <a href={subject.moduleLink}>
+                    <button>Notes</button>
+                </a>
+            </div>
+          ))}
 
         </div>
         <br />
 
         <div className="view">
-          <a href="subject.php" className="view-more-sub"><button>View More</button></a>
+          <a href={'/Subject'} className="view-more-sub"><button>Explore</button></a>
         </div>
         <br /><br />
 
-        <h1 className="heading">our popular sets</h1>
+        <h1 className="heading">main sets</h1>
 
-        <div className="box-container">
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>LEET Group-A</h3>
-              <p>Year 2012</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>LEET Group-A</h3>
-              <p>Year 2013</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>LEET Group-A</h3>
-              <p>Year 2014</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>LEET Group-A</h3>
-              <p>Year 2015</p>
-                <a href=""><button>Visit</button></a>
-          </div>
-
-          <div className="box">
-              <img src="" alt="" />
-              <h3>LEET Group-A</h3>
-              <p>Year 2016</p>
-                <a href=""><button>Visit</button></a>
-          </div>
+        <div class="box-container">
+          {leet.slice(0, 4).map((leet, index) => (
+            <div class="box" key={leet.name + index}>
+                <img src={urlFor(leet.imgUrl)} alt={leet.name} />
+                <h3>{leet.name}</h3>
+                <p>{leet.modules}</p>
+                <a href={leet.moduleLink}>
+                    <button>Syllabus</button>
+                </a>
+                &nbsp;&nbsp;
+                <a href={leet.moduleLink}>
+                    <button>Notes</button>
+                </a>
+            </div>
+          ))}
 
         </div>
         <br />
 
         <div className="view">
-          <a href="" className="view-more-sub"><button>View More</button></a>
+          <a href={'/Leet'} className="view-more-sub"><button>Explore</button></a>
         </div>
 
         </section>
