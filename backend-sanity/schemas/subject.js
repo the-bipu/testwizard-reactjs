@@ -10,7 +10,7 @@ export default{
         },
         {
             name:'modules',
-            title:'modules',
+            title:'Modules',
             type:'string'
         },
         {
@@ -23,6 +23,14 @@ export default{
             title: 'Notes Link',
             type: 'string',
         },
+        {
+            name: 'pdfFile',
+            title: 'PDF File',
+            type: 'file',
+            options: {
+              accept: '.pdf',
+            },
+          },
         {
             name:'imgUrl',
             title:'ImgUrl',
