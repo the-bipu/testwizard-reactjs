@@ -23,7 +23,7 @@ const Subject = () => {
 
         <section className="heading-link">
             <h3>Our Subjects</h3>
-            <p> <a href="index.php">home</a> / subjects </p>
+            <p> <a href="">home</a> / subjects </p>
         </section>
 
         <section className='subjects'>
@@ -31,20 +31,33 @@ const Subject = () => {
 
             <div className="box-container--subject">
 
-                {subject.map((subject, index) => (
-                    <div className="box" key={subject.name + index}>
-                        <img src={urlFor(subject.imgUrl)} alt={subject.name} />
-                        <h3>{subject.name}</h3>
-                        <p>{subject.modules}</p>
-                        <a href={subject.moduleLink}>
-                            <button>Take Test</button>
-                        </a>
-                        &nbsp;&nbsp;
-                        <a href={subject.moduleLink}>
-                            <button>Notes</button>
-                        </a>
-                    </div>
-                ))}
+                {subject.map((subject, index) => {
+
+                    // const pdfFile = subject.pdfFile;
+                    // const pdfUrl = pdfFile && pdfFile.asset._ref;
+                    // const cleanedUrl = pdfUrl && pdfUrl.replace(/file-/, '');
+                    // const EcleanedUrl = pdfUrl && cleanedUrl.replace(/-pdf$/, '');
+
+                    const EcleanedUrl = subject.pdfFile?.asset._ref?.replace(/file-/, '')?.replace(/-pdf$/, '');
+
+                    return (
+                        <div className="box" key={subject.name + index}>
+                            <img src={urlFor(subject.imgUrl)} alt={subject.name} />
+                            <h3>{subject.name}</h3>
+                            <p>{subject.modules}</p>
+                            <a href={subject}>
+                                <button>Take Test</button>
+                            </a>
+                            &nbsp;&nbsp;
+                            
+                            {subject.pdfFile && (
+                                <a href={`https://cdn.sanity.io/files/qvb402f6/production/${EcleanedUrl}.pdf`} target="_blank" rel="noopener noreferrer">
+                                    <button>Notes</button>
+                                </a>
+                            )}
+                        </div>
+                    );
+                })}
 
             </div>
 
