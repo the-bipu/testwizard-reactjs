@@ -1,9 +1,8 @@
-import express, { request, response } from "express";
+import express from "express";
 import cors from 'cors'; // Add this import
 import { PORT, URI } from "./config.js";
 import mongoose from 'mongoose';
 import filesRoute from './routes/filesRoute.js';
-import adminRoute from './routes/adminRoute.js';
 import userRoute from './routes/userRoute.js';
 
 const app = express();
@@ -20,8 +19,7 @@ app.get('/', (request, response) => {
 });
 
 app.use('/files', filesRoute);
-app.use('/user', userRoute);
-app.use('/admin', adminRoute);
+app.use('/api/users', userRoute);
 
 mongoose
     .connect(URI)
