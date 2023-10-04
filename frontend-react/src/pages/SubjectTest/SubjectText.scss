@@ -233,16 +233,18 @@ html {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                width: 145px;
+                gap: 1rem;
+                // width: 145px;
+                width: auto;
                 height: 45px;
                 background: #cce5ff;
                 border: 1px solid #b8daff;
                 border-radius: 5px;
                 padding: 0 8px;
 
-                .timer_text {
+                .time_text {
+                    font-size: 18px;
                     font-weight: 400;
-                    font-size: 17px;
                     user-select: none;
                 }
 
@@ -251,7 +253,7 @@ html {
                     font-weight: 500;
                     background: #343a40;
                     height: 30px;
-                    width: 45px;
+                    width: 55px;
                     color: #fff;
                     text-align: center;
                     line-height: 30px;
@@ -356,19 +358,6 @@ html {
                 font-weight: 500;
                 padding: 5 5px;
 
-                // span {
-                //     display: flex;
-                //     user-select: none;
-
-                //     p {
-                //         font-weight: 500;
-                //         padding: 0 5px;
-                //     }
-
-                //     p:first-child {
-                //         padding-left: 0px;
-                //     }
-                // }
             }
 
             .next_btn {
@@ -438,15 +427,18 @@ html {
             margin: 20px 0;
 
             button {
-                margin: 0 10px;
                 height: 45px;
+                background-color: #007bff;
+                border: 1px solid #007bff;
+                color: #fff;
+
+                margin: 0 10px;
                 padding: 0 20px;
                 border: none;
                 outline: none;
                 font-size: 18px;
                 font-weight: 500;
                 border-radius: 5px;
-                border: 1px solid #007bff;
                 cursor: pointer;
                 transition: all 0.3s ease;
             }
