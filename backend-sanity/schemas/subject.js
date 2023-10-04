@@ -9,6 +9,11 @@ export default{
             type:'string'
         },
         {
+            name: 'subCode',  // Added the new field 'subCode'
+            title: 'Sub Code',
+            type: 'string',
+        },
+        {
             name:'modules',
             title:'Modules',
             type:'string'
@@ -23,14 +28,6 @@ export default{
             title: 'Notes Link',
             type: 'string',
         },
-        {
-            name: 'pdfFile',
-            title: 'PDF File',
-            type: 'file',
-            options: {
-              accept: '.pdf',
-            },
-          },
         {
             name:'imgUrl',
             title:'ImgUrl',
