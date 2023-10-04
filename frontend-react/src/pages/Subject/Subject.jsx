@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Subject.scss';
 
@@ -33,28 +34,22 @@ const Subject = () => {
 
                 {subject.map((subject, index) => {
 
-                    // const pdfFile = subject.pdfFile;
-                    // const pdfUrl = pdfFile && pdfFile.asset._ref;
-                    // const cleanedUrl = pdfUrl && pdfUrl.replace(/file-/, '');
-                    // const EcleanedUrl = pdfUrl && cleanedUrl.replace(/-pdf$/, '');
-
-                    const EcleanedUrl = subject.pdfFile?.asset._ref?.replace(/file-/, '')?.replace(/-pdf$/, '');
-
                     return (
                         <div className="box" key={subject.name + index}>
                             <img src={urlFor(subject.imgUrl)} alt={subject.name} />
                             <h3>{subject.name}</h3>
+                            <p>{subject.subCode}</p>
                             <p>{subject.modules}</p>
-                            <a href={subject}>
-                                <button>Take Test</button>
-                            </a>
+                            <Link to={{
+                                pathname: `/subjectTest/${subject.name}/${subject.subCode}`
+                            }}>
+                                    <button>Take Test</button>
+                            </Link>
                             &nbsp;&nbsp;
-                            
-                            {subject.pdfFile && (
-                                <a href={`https://cdn.sanity.io/files/qvb402f6/production/${EcleanedUrl}.pdf`} target="_blank" rel="noopener noreferrer">
-                                    <button>Notes</button>
-                                </a>
-                            )}
+
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <button>Notes</button>
+                            </a>
                         </div>
                     );
                 })}
