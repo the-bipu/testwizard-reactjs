@@ -106,7 +106,7 @@ function SubjectTest(props) {
     
     // Check if an option is selected
     const isNextButtonVisible = selectedOption !== null;
-    
+
     const { subjectName, subCode } = useParams();
 
     return (
@@ -119,8 +119,7 @@ function SubjectTest(props) {
             </header>
 
             <div className="box--subdes">
-                <h2>Subject: { subjectName }</h2>
-                <h2>Set Code: { subCode }</h2>
+                <h2>Subject: { subjectName } / { subCode }</h2>
             </div>
 
             {startBtnVisible && 

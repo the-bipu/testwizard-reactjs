@@ -28,11 +28,11 @@ html {
 
     .box--subdes {
         opacity: 1;
-        width: 300px;
-        padding: 20px;
+        width: auto;
+        padding: 5px 20px;
         position: absolute;
-        top: 30%;
-        left: 15%;
+        top: 22%;
+        left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 5px;
         text-align: left;
@@ -47,7 +47,7 @@ html {
             /* text-transform: uppercase; */
             font-weight: 700;
             font-size: 20px;
-            border-bottom: 2px solid rgb(126, 12, 12);
+            // border-bottom: 2px solid rgb(126, 12, 12);
         
         }
     }
