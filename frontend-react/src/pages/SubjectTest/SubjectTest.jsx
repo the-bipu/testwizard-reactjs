@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { images } from '../../constants';
 import './SubjectText.scss';
 
 function SubjectTest(props) {
@@ -79,6 +81,11 @@ function SubjectTest(props) {
         setTimerStarted(true); // Start the timer
     }
 
+    const handleExitBtnclick = () => {
+        setInfoBoxVisible(false);
+        setStartBtnVisible(true);
+    }
+
     // handle the click of Options
     const handleOptionClick = (option) => {
         if (!quizCompleted) {
@@ -142,7 +149,7 @@ function SubjectTest(props) {
                         <div className="info">6. No negative marking available.</div>
                     </div>
                     <div className="buttons">
-                        <button className="quit">Exit Exam</button>
+                        <button className="quit" onClick={handleExitBtnclick}>Exit Exam</button>
                         <button className="restart" onClick={handleContinueBtnclick}>Continue</button>
                     </div>
                 </div>
@@ -151,13 +158,13 @@ function SubjectTest(props) {
             {quizBoxVisible && 
                 <div className="quiz_box">
                     {timerStarted && 
-                        <header>
+                        <div className='quiz_box--header'>
                             <div className="title--quizBox">Online Examination</div>
                             <div className="timer">
                                 <div className="time_text">Time Left</div>
                                 <div className="timer_sec">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
                             </div>
-                        </header>
+                        </div>
                     }
 
                     <section>

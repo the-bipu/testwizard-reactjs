@@ -12,9 +12,9 @@ html {
     margin: 0;
     padding: 0;
 
-    background: #6190E8;
-    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
-    background: linear-gradient(to right, #A7BFE8, #6190E8);
+    // background: #6190E8;
+    // background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    // background: linear-gradient(to right, #A7BFE8, #6190E8);
 
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -28,7 +28,7 @@ html {
 
     .box--subdes {
         opacity: 1;
-        width: auto;
+        width: 540px;
         padding: 5px 20px;
         position: absolute;
         top: 22%;
@@ -40,6 +40,8 @@ html {
         box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
             0px 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: all 0.3s ease;
+
+        text-align: center;
     
         h2 {
             padding: 10px;
@@ -49,6 +51,14 @@ html {
             font-size: 20px;
             // border-bottom: 2px solid rgb(126, 12, 12);
         
+        }
+
+        @media screen and (max-width: 560px) {
+            width: 90%;
+            
+            h2 {
+                font-size: 14px;
+            }
         }
     }
 
@@ -90,7 +100,7 @@ html {
             transform: translate(-50%, -50%) scale(1);
         }
     }
-    
+
     .quiz_box {
         position: absolute;
         top: 50%;
@@ -212,7 +222,7 @@ html {
         cursor: pointer;
         transform: translate(-50%, -50%) scale(0.9);
 
-        header {
+        .quiz_box--header {
             position: relative;
             z-index: 99;
             height: 80px;
@@ -408,18 +418,9 @@ html {
         }
 
         .score_text {
-            span {
-                display: flex;
-                margin: 10px 0;
-                font-size: 18px;
-                font-weight: 500;
-
-                p {
-                    font-weight: 600;
-                    padding: 0 4px;
-                }
-                
-            }
+            font-size: 20px;
+            font-weight: 600;
+            padding: 0 4px;
         }
 
         .buttons {
