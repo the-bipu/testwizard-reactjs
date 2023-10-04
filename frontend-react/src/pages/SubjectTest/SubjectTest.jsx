@@ -48,17 +48,21 @@ function SubjectTest(props) {
     const [quizBoxVisible, setQuizBoxVisible] = useState(false);
 
     useEffect(() => {
-        const timer = setInterval(() => {
-        if (timeLeft > 0) {
-            setTimeLeft(timeLeft - 1);
-        } else {
-            clearInterval(timer);
-            setQuizCompleted(true);
+        let timer;
+    
+        if (timerStarted) {
+          timer = setInterval(() => {
+            if (timeLeft > 0) {
+              setTimeLeft(timeLeft - 1);
+            } else {
+              clearInterval(timer);
+              setQuizCompleted(true);
+            }
+          }, 1000);
         }
-        }, 1000);
-
+    
         return () => clearInterval(timer);
-    }, [timeLeft]);
+    }, [timeLeft, timerStarted]);
 
     // handle the click of Start Button
     const handleStartBtnClick = () => {
@@ -78,7 +82,6 @@ function SubjectTest(props) {
         if (!quizCompleted) {
             // Handle user's option selection
             setSelectedOption(option);
-            console.log(option);
         }
     };
 
@@ -95,7 +98,6 @@ function SubjectTest(props) {
         } else {
             setQuizCompleted(true);
             setQuizBoxVisible(false);
-            console.log(quizCompleted);
         }
     };
     
@@ -144,13 +146,15 @@ function SubjectTest(props) {
 
             {quizBoxVisible && 
                 <div className="quiz_box">
-                    <header>
-                        <div className="title--quizBox">Online Examination</div>
-                        <div className="timer">
-                            <div className="time_text">Time Left</div>
-                            <div className="timer_sec">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
-                        </div>
-                    </header>
+                    {timerStarted && 
+                        <header>
+                            <div className="title--quizBox">Online Examination</div>
+                            <div className="timer">
+                                <div className="time_text">Time Left</div>
+                                <div className="timer_sec">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
+                            </div>
+                        </header>
+                    }
 
                     <section>
                         <div className="que_text">
