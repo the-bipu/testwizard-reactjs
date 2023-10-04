@@ -37,16 +37,18 @@ function SubjectTest(props) {
     const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
     const [timerStarted, setTimerStarted] = useState(false); // starts the timer
 
-
+    // For tracking questions and scores
     const [currentQuestion, setCurrentQuestion] = useState(0); // track current questions
     const [selectedOption, setSelectedOption] = useState(null); // tracks the selected options
     const [score, setScore] = useState(0);  // tracks the score of the user
     const [quizCompleted, setQuizCompleted] = useState(false); // checks if quiz finished or not
 
-    const [startBtnVisible, setStartBtnVisible] = useState(true);
-    const [infoBoxVisible, setInfoBoxVisible] = useState(false);
-    const [quizBoxVisible, setQuizBoxVisible] = useState(false);
+    // For tracking the box visibility
+    const [startBtnVisible, setStartBtnVisible] = useState(true); // start button visibility
+    const [infoBoxVisible, setInfoBoxVisible] = useState(false);  // infor box visibility tracker
+    const [quizBoxVisible, setQuizBoxVisible] = useState(false);  // quiz box visibility tracker
 
+    // For tracking timer
     useEffect(() => {
         let timer;
     
@@ -92,6 +94,7 @@ function SubjectTest(props) {
             setScore(score + 1);
         }
 
+        // Check if the questions remain then show next else end the quiz
         if (currentQuestion + 1 < questions.length) {
             setCurrentQuestion(currentQuestion + 1);
             setSelectedOption(null);
@@ -101,8 +104,10 @@ function SubjectTest(props) {
         }
     };
     
+    // Check if an option is selected
+    const isNextButtonVisible = selectedOption !== null;
+    
     const { subjectName, subCode } = useParams();
-    const isNextButtonVisible = selectedOption !== null; // Check if an option is selected
 
     return (
         <div className="app--subtest">
