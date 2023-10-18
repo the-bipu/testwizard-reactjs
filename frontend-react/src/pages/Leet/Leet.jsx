@@ -30,19 +30,19 @@ const Leet = () => {
     <div>
        <Navbar />
 
-        <section class="heading-link">
+        <section className="heading-link">
             <h3>LEET</h3>
             <p> <a href="index.php">home</a> / LEET </p>
         </section>
 
-        <section class="subjects">
+        <section className="subjects">
 
-            <h1 class="heading">Syllabus + Notes</h1>
+            <h1 className="heading">Syllabus + Notes</h1>
 
-            <div class="box-container">
+            <div className="box-container">
 
                 {leetNotes.map((leetNotes, index) => (
-                    <div class="box" key={leetNotes.name + index}>
+                    <div className="box" key={leetNotes.name + index}>
                         <img src={urlFor(leetNotes.imgUrl)} alt={leetNotes.name} />
                         <h3>{leetNotes.name}</h3>
                         <p>{leetNotes.description}</p>
@@ -59,15 +59,15 @@ const Leet = () => {
             </div>
             <br /><br />
 
-            <h1 class="heading">Test Papers</h1>
+            <h1 className="heading">Test Papers</h1>
 
             {/* 20 mathematics, 15 physics and 15 chemistry
             50 minutes for 50 questions */}
 
-            <div class="box-container">
+            <div className="box-container">
 
                 {leet.map((leet, index) => (
-                        <div class="box" key={leet.name + index}>
+                        <div className="box" key={leet.name + index}>
                             <img src={urlFor(leet.imgUrl)} alt={leet.name} />
                             <h3>{leet.name}</h3>
                             <p>{leet.year}</p>
