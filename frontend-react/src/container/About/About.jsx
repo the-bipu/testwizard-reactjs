@@ -31,7 +31,7 @@ const About = () => {
         <div className="box-container">
 
           {subject.slice(0, 4).map((subject, index) => (
-            <div class="box" key={subject.name + index}>
+            <div className="box" key={subject.name + index}>
                 <img src={urlFor(subject.imgUrl)} alt={subject.name} />
                 <h3>{subject.name}</h3>
                 <p>{subject.modules}</p>
@@ -55,9 +55,9 @@ const About = () => {
 
         <h1 className="heading">main sets</h1>
 
-        <div class="box-container">
+        <div className="box-container">
           {leet.slice(0, 4).map((leet, index) => (
-            <div class="box" key={leet.name + index}>
+            <div className="box" key={leet.name + index}>
                 <img src={urlFor(leet.imgUrl)} alt={leet.name} />
                 <h3>{leet.name}</h3>
                 <p>{leet.modules}</p>
