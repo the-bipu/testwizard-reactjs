@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { About, Footer, Header } from '../../container';
+import { About, Footer, Hero, Header } from '../../container';
 import { Navbar } from '../../components';
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
     <div className='app'>
       <Navbar />
       <Header />
+      <Hero />
       <About />
       <Footer />
     </div>
