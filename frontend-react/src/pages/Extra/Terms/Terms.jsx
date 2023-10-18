@@ -15,12 +15,12 @@ const Terms = () => {
             <p> <a href="index.php">home</a> / terms </p>
         </section>
 
-        <section class="content">
+        <section className="content">
             <h3>
               These are some Terms and Conditions you have to follow while using our website : 
             </h3><br />
 
-            <div class="terms">
+            <div className="terms">
               <p><span>1. Use of TestWizard:</span> By accessing and using the TestWizard website, you agree to be bound by these terms
                   and conditions.
                   If you do not agree with these terms and conditions, you should not use the TestWizard website.
