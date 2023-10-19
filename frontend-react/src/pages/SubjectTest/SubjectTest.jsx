@@ -119,8 +119,8 @@ function SubjectTest(props) {
     return (
         <div className="app--subtest">
 
-            <header className="header">
-                <nav className="navbar">
+            <header className="navbar--main">
+                <nav className="container">
                     <a href="../" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
                 </nav>
             </header>
