@@ -119,11 +119,11 @@ function SubjectTest(props) {
     return (
         <div className="app--subtest">
 
-            <header className="navbar--main">
+            <div className="navbar--main">
                 <nav className="container">
                     <a href="../" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
                 </nav>
-            </header>
+            </div>
 
             <div className="box--subdes">
                 <h2>Subject: { subjectName } / { subCode }</h2>
