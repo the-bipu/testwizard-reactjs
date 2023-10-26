@@ -8,9 +8,25 @@
     .main--content-hero {
         width: auto;
         height: auto;
+
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        gap: 1.5rem;
+
+        .content--div-hero {
+            font-size: 2rem;
+        }
+    }
+
+    .image--div-hero {
+        width: 100vw;
+        height: auto;
+
+        .image--group {
+            width: 700px;
+            height: auto;
+        }
     }
 }
