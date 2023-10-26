@@ -267,6 +267,7 @@
             align-items: center;
             justify-content: center;
             padding: 1rem 0 2rem 0;
+
             .box-button {
                 background-color: #0eb582;
                 color: #fff;
@@ -289,7 +290,6 @@
             }
         }
 
-
         .us-section--large {
             width: 100%;
             display: flex;
@@ -299,6 +299,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            display: none;
 
             .box-section--large {
                 width: 98%;
@@ -308,6 +309,7 @@
                 flex-direction: row;
                 justify-content: space-around;
                 text-align: center;
+
                 padding: 2rem 2rem;
                 text-align: center;
                 border: 0.1rem solid #0eb582;
@@ -374,6 +376,11 @@
                     }
                 }
             }
+        }
+
+        .show-us-section--large {
+            display: block;
+            display: flex;
         }
     }
 }
