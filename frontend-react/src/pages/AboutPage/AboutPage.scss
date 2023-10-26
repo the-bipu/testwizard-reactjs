@@ -245,36 +245,11 @@
                     }
                 }
     
-                button.box-button {
-                    background-color: #0eb582;
-                    color: #fff;
-                    margin-top: 1rem;
-                    padding: .5rem 2rem;
-                    font-size: 1.8rem;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    text-transform: capitalize;
-                    /* background: transparent;  */
-                    /* color: #000;  */
-                    /* border: 0.1rem solid #0eb582; */
-    
-                    a {
-                        color: #fff;
-                        font-size: 1.8rem;
-                        cursor: pointer;
-                        text-transform: capitalize;
-                    }
-                }
-    
-                button.box-button:hover {
-                    background-color: #444;
-                }
-    
                 @media screen and (max-width: 1000px) {
                     width: 36rem;
                 }
             }
-    
+
             @media screen and (max-width: 1000px) {
                 display: flex;
                 flex-direction: column;
@@ -284,7 +259,36 @@
                 align-items: center;
                 justify-content: center;
             }
+            
         }
+
+        .button--section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0 2rem 0;
+            .box-button {
+                background-color: #0eb582;
+                color: #fff;
+                padding: .5rem 2rem;
+                font-size: 1.8rem;
+                border-radius: 8px;
+                text-transform: capitalize;
+                cursor: pointer;
+    
+                a {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    cursor: pointer;
+                    text-transform: capitalize;
+                }
+            }
+    
+            .box-button:hover {
+                background-color: #444;
+            }
+        }
+
 
         .us-section--large {
             width: 100%;
@@ -311,10 +315,17 @@
                 cursor: pointer;
 
                 .content--div {
-                    width: 400px;
+                    width: 800px;
+                    border-radius: 30px;
                     background-color: #ddd;
                     text-align: center;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
+                    padding: 2rem;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
                 }
 
                 .image--div {
@@ -340,6 +351,27 @@
                     border: 10px solid #ddd;
                     border-left-color: #272727;
                     border-right-color: #272727;
+                }
+
+                .share {
+                    align-items: center;
+                    margin-top: 1rem;
+    
+                    a {
+                        height: 4rem;
+                        width: 4rem;
+                        line-height: 4.5rem;
+                        font-size: 1.7rem;
+                        background-color: #0eb582;
+                        color: #fff;
+                        text-align: center;
+                        align-items: center;
+                        margin-left: 5px;
+                    }
+    
+                    a:hover {
+                        background-color: #444;
+                    }
                 }
             }
         }
