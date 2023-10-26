@@ -11,6 +11,12 @@ import { urlFor, client } from '../../client';
 const AboutPage = () => {
 
     const [abouts, setAbouts] = useState([]);
+    const [isPressed, setIsPressed] = useState(false);
+
+    const toggleIsPressed = () => {
+        console.log(isPressed);
+        setIsPressed(prevState => !prevState);
+    }
 
     useEffect(() => {
         const query = '*[_type == "abouts"]';
@@ -76,10 +82,10 @@ const AboutPage = () => {
                 </section>
 
                 <section className="button--section">
-                    <button className="box-button"><a href="">Show Detailed Version !!</a></button>
+                    <button className="box-button" onClick={toggleIsPressed} >Show Detailed Version !!</button>
                 </section>
 
-                <section className="us-section--large">
+                <section className={`us-section--large ${isPressed ? 'show-us-section--large' : ''}`}>
 
                     {abouts.map((abouts, index) => (
                         <div className="box-section--large" key={abouts.name + index}>
