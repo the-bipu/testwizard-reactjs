@@ -10,7 +10,15 @@ const Hero = () => {
             <div className="heading">Why this Site ??</div>
 
             <div className="main--content-hero">
-              <div className="content--div-hero">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, labore! Cum, vel voluptatibus! Quisquam dicta sed minus, dolorum incidunt iste voluptatum nemo doloribus, maxime corporis perferendis cupiditate tempore, molestias nesciunt! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex quibusdam soluta unde at eius maxime, libero officiis, pariatur veniam odio natus provident, totam id aliquam molestiae illo sint excepturi! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis amet voluptate possimus deserunt alias nisi accusantium quibusdam. Omnis, id necessitatibus doloremque molestias, dolorem consequuntur, quo beatae delectus corrupti ea nesciunt!</div>
+              <div className="content--div-hero">
+                TestWizard is a website designed to help students prepare for their Diploma Engineering and LEET examinations. The website offers a wide range of quizzes covering various subjects related to the exam, allowing students to test their knowledge and identify areas they need to focus on. 
+
+                <br />
+                <br />
+                
+                Additionally, TestWizard provides comprehensive notes and study materials to help students better understand the concepts covered in the exam. With a user-friendly interface and up-to-date content, TestWizard is the perfect resource for students looking to excel in their Diploma Engineering and LEET exams.
+
+              </div>
               <div className="image--div-hero">
                 <img className='image--group' src={images.group} alt="" />
               </div>
