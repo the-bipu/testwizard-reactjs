@@ -28,7 +28,7 @@ const Navbar = () => {
 
       <div className={`navbar--main ${isActive ? 'active' : ''}`}>
       <div className='container'>
-            <a href="#" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
+            <a href="/" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
 
             <div id="menu-btn" onClick={toggleNavbar} className="fas fa-bars"></div>
 
@@ -39,6 +39,7 @@ const Navbar = () => {
                 <Link to="/Leet">Leet</Link>
                 <Link to="/AboutPage">About</Link>
                 <Link to="/Contact">Contact</Link>
+                <Link to="/Login">Login</Link>
             </nav>
 
       </div>
@@ -51,6 +52,7 @@ const Navbar = () => {
         <Link to="/Leet">Leet</Link>
         <Link to="/AboutPage">About</Link>
         <Link to="/Contact">Contact</Link>
+        <Link to="/Login">Login</Link>
       </div>
 
     </div>
