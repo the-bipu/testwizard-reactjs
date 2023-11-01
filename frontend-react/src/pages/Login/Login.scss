@@ -74,32 +74,56 @@
                 // align-items: center;
                 justify-content: center;
                 flex-direction: column;
+
+                .email__div {
+                    width: auto;
+                    height: auto;
+                    text-align: left;
+                    margin-top: 4rem;
+                }
+    
+                .password__div {
+                    width: auto;
+                    height: auto;
+                    text-align: left;
+                    margin-top: 2rem;
+                }
             }
 
             .register__div {
-                display: none;
                 width: 500px;
                 height: 500px;
                 background-color: rgb(255, 255, 255);
                 border-radius: 20px;
                 text-align: center;
-                padding: 2rem;
+                padding: 3rem 4rem;
 
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+                .email__div {
+                    width: auto;
+                    height: auto;
+                    text-align: left;
+                    margin-top: 2rem;
+                }
+    
+                .username__div {
+                    width: auto;
+                    height: auto;
+                    text-align: left;
+                    margin-top: 1rem;
+                }
+    
+                .password__div {
+                    width: auto;
+                    height: auto;
+                    text-align: left;
+                    margin-top: 1rem;
+                }
             }
 
-            .email__div {
-                width: auto;
-                height: auto;
-                text-align: left;
-                margin-top: 4rem;
-            }
-
-            .password__div {
-                width: auto;
-                height: auto;
-                text-align: left;
-                margin-top: 2rem;
+            .hide__div {
+                display: none;
             }
 
             .route {
@@ -108,11 +132,14 @@
                 font-size: 1.5rem;
                 font-weight: 600;
 
-                a {
+                button {
                     color: #000;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    background-color: transparent;
                 }
 
-                a:hover {
+                button:hover {
                     color: rgb(0, 208, 255);
                     text-decoration: underline;
                 }
