@@ -1,0 +1,124 @@
+.login__register {
+    background-color: #fff;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .header__login {
+        height: 75px;
+        width: auto;
+        display: flex;
+        align-items: center;
+
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+        z-index: 1;
+
+        .header__login:before {
+            box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+            filter: blur(10px);
+        }
+
+        .container {
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+
+            .logo {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--black-color);
+            }
+        }
+    }
+
+    .main__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .main__illust {
+            width: 40%;
+        
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+        .content__div {
+            width: 50%;
+            font-size: 2rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .login__div {
+                width: 500px;
+                height: 500px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 20px;
+                text-align: center;
+                padding: 2rem;
+
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            }
+
+            .register__div {
+                display: none;
+                width: 500px;
+                height: 500px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 20px;
+                text-align: center;
+                padding: 2rem;
+
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            }
+
+            .input__box {
+                height: 4.5rem;
+                width: 100%;
+                text-indent: 1rem;
+
+                font-size: 2rem;
+                font-weight: 600;
+                
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            }
+
+            .email__input {
+                margin-top: 4rem;
+            }
+            
+            .password__input {
+                margin-top: 2rem;
+            }
+
+            .heading__div {
+                height: 4.5rem;
+                width: auto;
+
+                font-size: 2.5rem;
+                font-weight: 700;
+                background-color: rgb(145, 255, 255);
+
+                border-radius: 10px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            }
+        }
+    }
+}
