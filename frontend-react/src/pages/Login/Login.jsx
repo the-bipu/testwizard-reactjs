@@ -22,8 +22,30 @@ const Login = () => {
           <div className="login__div">
             <div className='heading__div'>Login</div>
 
-            <input type="text" name='email' placeholder='Email' className='email__input input__box' />
-            <input type="password" name='password' placeholder='Password' className='password__input input__box' />
+            <div className="email__div">
+              <label htmlFor="Email" className='label__input'>Email</label>
+              <input type="text" name='email' className='email__input input__box' />
+            </div>
+
+            <div className="password__div">
+              <label htmlFor="Passoword" className='label__input'>Password</label>
+              <input type="password" name='password' className='password__input input__box' />
+            </div>
+
+            <div className="password__route route">
+              <a href="">Forget Password</a>
+            </div>
+
+            <div className="submit__button">
+              <button type='submit'>Submit</button>
+            </div>
+
+            <div className="register__route route">
+              Don't have an account?
+              &nbsp;
+              <a href="">Sign Up</a>
+            </div>
+
           </div>
 
           <div className="register__div">
