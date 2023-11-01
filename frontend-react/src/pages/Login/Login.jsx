@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 import { images } from '../../constants';
 import './Login.scss';
 
 const Login = () => {
+
+  const [isLogin, setIsLogin] = useState(false);
+
+  const toggleLogin = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
     <div className='login__register'>
       <div className="header__login">
@@ -19,8 +26,8 @@ const Login = () => {
 
         <div className="content__div">
 
-          <div className="login__div">
-            
+          <div className="login__div" style={{ display: isLogin ? 'none' : 'block' }}>
+
             <div className='heading__div'>Login</div>
 
             <div className="email__div">
@@ -34,7 +41,7 @@ const Login = () => {
             </div>
 
             <div className="password__route route">
-              <a href="">Forget Password</a>
+              <button href="">Forget Password !?</button>
             </div>
 
             <div className="submit__button">
@@ -44,13 +51,40 @@ const Login = () => {
             <div className="register__route route">
               Don't have an account?
               &nbsp;
-              <a href="">Sign Up</a>
+              <button href="" onClick={toggleLogin}>Sign Up</button>
             </div>
 
           </div>
 
-          <div className="register__div">
+          <div className="register__div" style={{ display: isLogin ? 'block' : 'none' }}>
+
             <div className='heading__div'>Register</div>
+            
+            <div className="email__div">
+              <label htmlFor="Email" className='label__input'>Email</label>
+              <input type="text" name='email' className='email__input input__box' />
+            </div>
+
+            <div className="username__div">
+              <label htmlFor="Username" className='label__input'>Username</label>
+              <input type="text" name='username' className='username__input input__box' />
+            </div>
+
+            <div className="password__div">
+              <label htmlFor="Passoword" className='label__input'>Password</label>
+              <input type="password" name='password' className='password__input input__box' />
+            </div>
+
+            <div className="submit__button">
+              <button type='submit' className='subMit'>Submit</button>
+            </div>
+
+            <div className="register__route route">
+              Already have an account?
+              &nbsp;
+              <button href="" onClick={toggleLogin}>Login</button>
+            </div>
+
           </div>
 
         </div>
