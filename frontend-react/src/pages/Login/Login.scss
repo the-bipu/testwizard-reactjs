@@ -83,24 +83,56 @@
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             }
 
+            .email__div {
+                width: auto;
+                height: auto;
+                text-align: left;
+                margin-top: 4rem;
+            }
+
+            .password__div {
+                width: auto;
+                height: auto;
+                text-align: left;
+                margin-top: 2rem;
+            }
+
+            .route {
+                text-align: left;
+                margin-top: .5rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                a {
+                    color: #000;
+                }
+
+                a:hover {
+                    color: rgb(0, 208, 255);
+                    text-decoration: underline;
+                }
+            }
+
+            .route.register__route {
+                text-align: right;
+            }
+
+            .label__input {
+                font-size: 2rem;
+                text-align: left;
+            }
+
             .input__box {
-                height: 4.5rem;
+                height: 5rem;
                 width: 100%;
                 text-indent: 1rem;
+                margin-top: .5rem;
 
                 font-size: 2rem;
                 font-weight: 600;
                 
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-            }
-
-            .email__input {
-                margin-top: 4rem;
-            }
-            
-            .password__input {
-                margin-top: 2rem;
             }
 
             .heading__div {
@@ -117,6 +149,18 @@
                 align-items: center;
                 justify-content: center;
                 
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            }
+
+            .submit__button {
+                height: 5rem;
+                width: 100%;
+                margin-top: 2rem;
+
+                font-size: 2rem;
+                font-weight: 600;
+                
+                border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             }
         }
