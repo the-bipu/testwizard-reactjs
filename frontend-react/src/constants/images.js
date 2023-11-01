@@ -7,6 +7,7 @@ import bb8 from '../assets/bb-8.jpg';
 import grogu from '../assets/grogu.jpg';
 import login from '../assets/login.jpg';
 
+// eslint-disable-next-line
 export default {
   aditya,
   slide,
