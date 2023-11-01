@@ -20,6 +20,7 @@ const Login = () => {
         <div className="content__div">
 
           <div className="login__div">
+            
             <div className='heading__div'>Login</div>
 
             <div className="email__div">
@@ -37,7 +38,7 @@ const Login = () => {
             </div>
 
             <div className="submit__button">
-              <button type='submit'>Submit</button>
+              <button type='submit' className='subMit'>Submit</button>
             </div>
 
             <div className="register__route route">
