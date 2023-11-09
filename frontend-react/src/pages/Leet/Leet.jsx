@@ -13,14 +13,14 @@ const Leet = () => {
     const [leetNotes, setLeetNotes] = useState([])
 
     useEffect(() => {
-        const query = '*[_type == "leet"]';
+        const query = `*[_type == "leet"] | order(title asc)`;
     
         client.fetch(query)
           .then((data) => setLeet(data))
       }, [])
 
     useEffect(() => {
-        const query = '*[_type == "leetnotes"]';
+        const query = `*[_type == "leetnotes"] | order(title asc)`;
     
         client.fetch(query)
           .then((data) => setLeetNotes(data))
