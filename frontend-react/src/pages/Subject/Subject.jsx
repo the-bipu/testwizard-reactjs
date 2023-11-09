@@ -12,7 +12,7 @@ const Subject = () => {
     const [subject, setSubject] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "subject"]';
+        const query = `*[_type == "subject"] | order(title asc)`;
     
         client.fetch(query)
           .then((data) => setSubject(data))
