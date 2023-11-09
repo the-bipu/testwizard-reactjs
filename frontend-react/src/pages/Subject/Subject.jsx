@@ -47,9 +47,11 @@ const Subject = () => {
                             </Link>
                             &nbsp;&nbsp;
 
-                            <a href="" target="_blank" rel="noopener noreferrer">
-                                <button>Notes</button>
-                            </a>
+                            <Link to={{
+                                pathname: `/subjectDetail/${subject.name}/${subject.subCode}`
+                            }}>
+                                    <button>Detail</button>
+                            </Link>
                         </div>
                     );
                 })}
