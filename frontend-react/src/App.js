@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Home, Subject, Leet, AboutPage, Contact, Login, Terms, SubjectTest } from './pages';
+import { Home, Subject, Leet, AboutPage, Contact, Login, Terms, SubjectTest, SubjectDetail } from './pages';
 import './App.scss';
 
 const App = () => {
@@ -16,6 +16,7 @@ const App = () => {
       <Route path='/Terms' element={<Terms />} />
 
       <Route path='/subjectTest/:subjectName/:subCode' element={<SubjectTest />} />
+      <Route path="/subjectDetail/:subjectName/:subCode" element={<SubjectDetail />} />
     </Routes>
   );
 }
