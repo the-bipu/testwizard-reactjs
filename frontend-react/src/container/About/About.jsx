@@ -51,7 +51,8 @@ const About = () => {
         <div className="view">
           <a href={'/Subject'} className="view-more-sub"><button>Explore</button></a>
         </div>
-        <br /><br />
+
+        <br /><br /><br />
 
         <h1 className="heading">main sets</h1>
 
