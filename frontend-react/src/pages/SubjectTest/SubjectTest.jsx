@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { images } from '../../constants';
 import './SubjectText.scss';
 
-function SubjectTest(props) {
+export default function SubjectTest(props) {
 
     const [questions, setQuestions] = useState([
         {
@@ -119,104 +119,115 @@ function SubjectTest(props) {
     return (
         <div className="app--subtest">
 
-            <div className="navbar--main">
-                <nav className="container">
-                    <a href="../" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
+            <div className="navbar--test">
+                <nav className="container--test">
+                    <a href="/" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
                 </nav>
             </div>
 
-            <div className="box--subdes">
-                <h2>Subject: { subjectName } / { subCode }</h2>
+            <div className="box--subdes--main">
+                <div className="box--subdes">
+                    <h2>Subject: { subjectName } / { subCode }</h2>
+                </div>
             </div>
 
-            {startBtnVisible && 
-                <div className="start_btn">
-                    <button onClick={handleStartBtnClick}>Start Exam</button>
-                </div>
-            }
+            <div className='quiz--div'>
+                {startBtnVisible && 
+                    <div className="start_btn">
+                        <button onClick={handleStartBtnClick}>Start Exam</button>
+                    </div>
+                }
 
-            {infoBoxVisible && 
-                <div className="info_box">
-                    <div className="info_title">
-                        <span>Some Rules of this Exam</span>
-                    </div>
-                    <div className="info_list">
-                        <div className="info">1. You will have only <span>50 Seconds</span> per each Questions.</div>
-                        <div className="info">2. Once you select your answer, you can't reselect it.</div>
-                        <div className="info">3. You can't select any option once time goes off.</div>
-                        <div className="info">4. You can't exit while you're giving the Exam.</div>
-                        <div className="info">5. You'll get points on the basis of your correct answer.</div>
-                        <div className="info">6. No negative marking available.</div>
-                    </div>
-                    <div className="buttons">
-                        <button className="quit" onClick={handleExitBtnclick}>Exit Exam</button>
-                        <button className="restart" onClick={handleContinueBtnclick}>Continue</button>
-                    </div>
-                </div>
-            }
-
-            {quizBoxVisible && 
-                <div className="quiz_box">
-                    {timerStarted && 
-                        <div className='quiz_box--header'>
-                            <div className="title--quizBox">Online Examination</div>
-                            <div className="timer">
-                                <div className="time_text">Time Left</div>
-                                <div className="timer_sec">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
-                            </div>
+                {infoBoxVisible && 
+                    <div className="info_box">
+                        <div className="info_title">
+                            <span>Some Rules of this Exam</span>
                         </div>
-                    }
-
-                    <section>
-                        <div className="que_text">
-                            {questions[currentQuestion].question}
+                        <div className="info_list">
+                            <div className="info">1. You will have only <span>50 Seconds</span> per each Questions.</div>
+                            <div className="info">2. Once you select your answer, you can't reselect it.</div>
+                            <div className="info">3. You can't select any option once time goes off.</div>
+                            <div className="info">4. You can't exit while you're giving the Exam.</div>
+                            <div className="info">5. You'll get points on the basis of your correct answer.</div>
+                            <div className="info">6. No negative marking available.</div>
                         </div>
-                        <div className="option_list">
-                            {questions[currentQuestion].options.map((option, index) => (
-                                <div
-                                    key={index}
-                                    className={`option ${selectedOption === option ? 'selected' : ''}`}
-                                    onClick={() => handleOptionClick(option)}
-                                >
-                                    {option}
+                        <div className="buttons">
+                            <button className="quit" onClick={handleExitBtnclick}>Exit Exam</button>
+                            <button className="restart" onClick={handleContinueBtnclick}>Continue</button>
+                        </div>
+                    </div>
+                }
+
+                {quizBoxVisible && 
+                    <div className="quiz_box">
+                        {timerStarted && 
+                            <div className='quiz_box--header'>
+                                <div className="title--quizBox">Online Examination</div>
+                                <div className="timer">
+                                    <div className="time_text">Time Left</div>
+                                    <div className="timer_sec">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
+                            </div>
+                        }
 
-                    <footer>
-                        <div className="total_que">
-                            {currentQuestion + 1} / {questions.length}
+                        <section>
+                            <div className="que_text">
+                                {questions[currentQuestion].question}
+                            </div>
+                            <div className="option_list">
+                                {questions[currentQuestion].options.map((option, index) => (
+                                    <div
+                                        key={index}
+                                        className={`option ${selectedOption === option ? 'selected' : ''}`}
+                                        onClick={() => handleOptionClick(option)}
+                                    >
+                                        {option}
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        <footer>
+                            <div className="total_que">
+                                {currentQuestion + 1} / {questions.length}
+                            </div>
+                            {isNextButtonVisible && (
+                                <button className="next_btn" onClick={handleNextBtnClick}>
+                                    Next Que
+                                </button>
+                            )}
+                        </footer>
+                    </div>
+                }
+
+
+                {quizCompleted && 
+                    <div className="result_box">
+                        <div className="icon">
+                            <i className="fas fa-crown"></i>
                         </div>
-                        {isNextButtonVisible && (
-                            <button className="next_btn" onClick={handleNextBtnClick}>
-                                Next Que
+                        <div className="complete_text">You've completed the Exams !</div>
+
+                        <div className="score_text">
+                            {score} / {questions.length}
+                        </div>
+
+                        <div className="buttons--res">
+                            <button className="restart--btn">
+                                <Link to="/">Retake Exams</Link>
                             </button>
-                        )}
-                    </footer>
-                </div>
-            }
-
-
-            {quizCompleted && 
-                <div className="result_box">
-                    <div className="icon">
-                        <i className="fas fa-crown"></i>
+                            <button className="quit--btn">
+                                <Link to="/">Quit Exams</Link>
+                            </button>
+                        </div>
                     </div>
-                    <div className="complete_text">You've completed the Exams !</div>
+                }
+            </div>
 
-                    <div className="score_text">
-                        {score} / {questions.length}
-                    </div>
-                    <div className="buttons">
-                        <button className="restart">Retake Exams</button>
-                        <button className="quit">Quit Exams</button>
-                    </div>
-                </div>
-            }
+            <div className="footer--test">
+                <p>COPYRIGHT @2023 / TESTWIZARD</p>
+            </div>
 
         </div>
-    );
+  )
 }
-
-export default SubjectTest;
