@@ -213,7 +213,7 @@ export default function SubjectTest(props) {
                         </div>
 
                         <div className="buttons--res">
-                            <button className="restart--btn">
+                            <button className="restart--btn" onClick={handleExitBtnclick}>
                                 <Link to="/">Retake Exams</Link>
                             </button>
                             <button className="quit--btn">
