@@ -6,3 +6,4 @@ export { default as Contact } from './Contact/Contact';
 export { default as Login } from './Login/Login';
 export { default as Terms } from './Extra/Terms/Terms';
 export { default as SubjectTest } from './SubjectTest/SubjectTest';
+export { default as SubjectDetail } from './SubjectDetail/SubjectDetail';
