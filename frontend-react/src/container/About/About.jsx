@@ -9,18 +9,18 @@ const About = () => {
   const [leet, setLeet] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "subject"]';
+        const query = `*[_type == "subject"] | order(title asc)`;
     
         client.fetch(query)
           .then((data) => setSubject(data))
     }, [])
 
     useEffect(() => {
-        const query = '*[_type == "leet"]';
+        const query = `*[_type == "leet"] | order(title asc)`;
     
         client.fetch(query)
           .then((data) => setLeet(data))
-      }, [])
+    }, [])
 
   return (
     <div>
