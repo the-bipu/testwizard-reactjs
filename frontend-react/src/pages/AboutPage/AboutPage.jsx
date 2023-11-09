@@ -19,7 +19,7 @@ const AboutPage = () => {
     }
 
     useEffect(() => {
-        const query = '*[_type == "abouts"]';
+        const query = `*[_type == "abouts"]  | order(title asc)`;
 
         client.fetch(query)
             .then((data) => setAbouts(data))
