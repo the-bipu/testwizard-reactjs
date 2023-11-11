@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import { images } from '../../constants';
-import './SubjectText.scss';
+import './SubjectTest.scss';
 
 export default function SubjectTest(props) {
 
