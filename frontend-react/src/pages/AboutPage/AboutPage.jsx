@@ -111,8 +111,6 @@ const AboutPage = () => {
 
             </section>
 
-            <br /><br />
-
         </section>
 
         <Footer />
