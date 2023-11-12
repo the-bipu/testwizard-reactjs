@@ -4,13 +4,13 @@
     .box-container {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
         /* gap: 7rem; */
 
         .box {
             h3 {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
                 text-transform: capitalize;
                 color: #444;
                 padding: 1rem 0;
@@ -21,6 +21,7 @@
             }
 
             a {
+                font-size: .5rem;
                 font-weight: 400;
             }
 
@@ -29,14 +30,15 @@
                 margin-top: 1rem;
 
                 a {
-                    height: 4rem;
-                    width: 4rem;
-                    line-height: 4.5rem;
-                    font-size: 1.7rem;
+                    height: 2.8rem;
+                    width: 2.8rem;
+                    line-height: 2.8rem;
+                    font-size: 1.4rem;
                     background-color: #0eb582;
                     color: #fff;
-                    margin-right: .3rem;
                     text-align: center;
+                    align-items: center;
+                    margin-left: 5px;
                 }
 
                 a:hover {
@@ -44,19 +46,15 @@
                 }
             }
 
-            .p-box {
-                font-size: 1.7rem;
-            }
-
             .p-contact {
-                font-size: 1.7rem;
+                font-size: 1.2rem;
             }
 
             .link {
-                font-size: 1.7rem;
-                line-height: 2;
+                font-size: 1.2rem;
+                line-height: 1.8;
                 color: #777;
-                padding: .4rem 0;
+                padding: .2rem 0;
                 display: block;
                 /* margin-left: 30px; */
 
@@ -71,10 +69,10 @@
             }
 
             p {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 line-height: 2;
                 color: #777;
-                padding: 1rem 0;
+                padding: .5rem 0;
             }
 
             .email {
@@ -84,14 +82,19 @@
                 border: 0.1rem solid #0eb582;
                 margin-bottom: 1rem;
             }
+
+            .p-box {
+                font-size: 1.2rem;
+                padding-top: 0;
+            }
         }
     }
 
     .credit {
         text-align: center;
-        margin-top: 3rem;
-        padding-top: 3rem;
-        font-size: 2rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        font-size: 1.2rem;
         text-transform: capitalize;
         color: #444;
         border-top: 0.1rem solid #0eb582;
