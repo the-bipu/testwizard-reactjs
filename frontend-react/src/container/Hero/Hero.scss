@@ -7,7 +7,7 @@
     }
 
     .main--content-hero {
-        width: auto;
+        width: 100%;
         height: auto;
 
         display: flex;
@@ -17,19 +17,37 @@
         gap: 2rem;
 
         .content--div-hero {
+            width: 50%;
             padding: 1rem;
-            font-size: 2rem;
+            font-size: 1.2rem;
             text-align: justify;
+
+            @media screen and (max-width:900px) {
+                width: 100%;
+            }
         }
-    }
 
-    .image--div-hero {
-        width: 100vw;
-        height: auto;
-
-        .image--group {
-            width: 700px;
+        .image--div-hero {
+            width: 50%;
             height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            .image--group {
+                max-width: 100%;
+                min-width: auto;
+                height: auto;
+            }
+
+            @media screen and (max-width:900px) {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:900px) {
+            flex-direction: column;
         }
     }
+
 }
