@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './Loading.scss'
+import './Loader.scss'
 import Navbar from '../Navbar/Navbar'
 
-export default function Loading() {
+export default function Loader() {
   return (
     <div className='major--div'>
         <Navbar />
