@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { client, urlFor } from '../../client';
 
-import { Navbar, Loading } from '../../components';
+import { Navbar, Loader } from '../../components';
 import './SubjectDetail.scss';
 
 const SubjectDetail = () => {
@@ -17,7 +17,7 @@ const SubjectDetail = () => {
   }, [subjectName, subCode]);
 
   if (!subject) {
-    return <div><Loading /></div>;
+    return <div><Loader /></div>;
   }
 
   return (
