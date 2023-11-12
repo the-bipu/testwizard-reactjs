@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Subject.scss';
 
 import { Footer } from '../../container';
-import { Navbar } from '../../components';
+import { Navbar, Loader } from '../../components';
 
 import { urlFor, client } from '../../client';
 
@@ -16,7 +16,11 @@ const Subject = () => {
     
         client.fetch(query)
           .then((data) => setSubject(data))
-      }, [])
+    }, []);
+
+    if (!subject) {
+    return <div><Loader /></div>;
+    }
 
   return (
     <div>
