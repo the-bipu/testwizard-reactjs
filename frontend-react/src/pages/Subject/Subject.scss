@@ -2,32 +2,33 @@
     .box-container--subject {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: (minmax(18rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-        gap: 2rem;
+        -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        gap: 1.5rem;
 
         .box {
-            padding: 3rem 2rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             border: 0.1rem solid #0eb582;
             background: #f0fdfa;
             /* cursor: pointer; */
 
             img {
-                height: 13rem;
+                height: 8rem;
                 margin-bottom: .7rem;
                 border-radius: 50%;
             }
 
             h3 {
-                font-size: 1.7rem;
+                height: 70px;
+                font-size: 1.2rem;
                 text-transform: capitalize;
                 color: #444;
                 padding: .5rem 0;
             }
 
             p {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 line-height: 2;
                 color: #777;
             }
@@ -37,10 +38,9 @@
                 color: #0eb582;
                 background: transparent;
                 margin-top: 1rem;
-                padding: .5rem 2rem;
-                font-size: 1.8rem;
+                padding: .5rem 1rem;
+                font-size: 1rem;
                 border: 0.1rem solid #0eb582;
-                // border-radius: 8px;
                 cursor: pointer;
                 text-transform: capitalize;
               }
@@ -53,15 +53,3 @@
           }
       }
 }
-  
-  /* .subjects .box-container .box:hover {
-    background: #0eb582;
-  } */
-  
-  /* .subjects .box-container .box:hover h3 {
-    color: #fff;
-  } */
-  
-  /* .subjects .box-container .box:hover p {
-    color: #eee;
-  } */
