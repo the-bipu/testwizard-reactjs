@@ -104,7 +104,7 @@ const Login = () => {
 
   return (
     <div className='login__register'>
-    
+
       <div className="header__login">
         <div className="container">
           <a href="/" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
@@ -134,7 +134,7 @@ const Login = () => {
 
                 <div className="username__div">
                   <label htmlFor="Username" className='label__input'>Username</label>
-                  <input type="text" name='username' onChange={handleInputChange} title='Must be a valid Username' pattern='[a-zA-Z0-9_]' className='username__input input__box' required />
+                  <input type="text" name='username' onChange={handleInputChange} title='Must be a valid Username' className='username__input input__box' required />
                 </div>
 
                 <div className="password__div">
