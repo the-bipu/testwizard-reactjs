@@ -1,7 +1,8 @@
 .login__register {
     max-width: auto;
-    position: absolute;
     width: 100vw;
+    min-height: 100vh;
+    max-width: auto;
     background-color: #e5e5f7;
     opacity: 0.8;
     background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
@@ -13,9 +14,11 @@
     align-items: center;
     justify-content: center;
 
-    .header__login {
+    .header__login { 
+        position: relative;
         height: 75px;
         width: auto;
+        top: 0;
         display: flex;
         align-items: center;
 
@@ -48,7 +51,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding: 2.8rem 0;
+        padding: 1.5rem 0;
 
         .main__illust {
             width: 50%;
@@ -66,19 +69,19 @@
     
         .content__div {
             width: 50%;
-            font-size: 2rem;
+            font-size: 1rem;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
             .login__div {
-                width: 500px;
-                height: 500px;
+                width: 450px;
+                height: auto;
                 background-color: rgb(255, 255, 255);
                 border-radius: 20px;
                 text-align: center;
-                padding: 4rem;
+                padding: 2rem;
 
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
@@ -90,24 +93,24 @@
                     width: auto;
                     height: auto;
                     text-align: left;
-                    margin-top: 4rem;
+                    margin-top: 2rem;
                 }
     
                 .password__div {
                     width: auto;
                     height: auto;
                     text-align: left;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                 }
             }
 
             .register__div {
-                width: 500px;
-                height: 500px;
+                width: 450px;
+                height: auto;
                 background-color: rgb(255, 255, 255);
                 border-radius: 20px;
                 text-align: center;
-                padding: 3rem 4rem;
+                padding: 2rem 2rem;
 
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
@@ -140,12 +143,12 @@
             .route {
                 text-align: left;
                 margin-top: .5rem;
-                font-size: 1.5rem;
+                font-size: 1rem;
                 font-weight: 600;
 
                 button {
                     color: #000;
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                     font-weight: 600;
                     background-color: transparent;
                     cursor: pointer;
@@ -162,17 +165,17 @@
             }
 
             .label__input {
-                font-size: 2rem;
+                font-size: 1.4rem;
                 text-align: left;
             }
 
             .input__box {
-                height: 5rem;
+                height: 3rem;
                 width: 100%;
                 text-indent: 1rem;
                 margin-top: .5rem;
 
-                font-size: 2rem;
+                font-size: 1.2rem;
                 font-weight: 600;
                 
                 border-radius: 10px;
@@ -180,10 +183,10 @@
             }
 
             .heading__div {
-                height: 4.5rem;
+                height: 3rem;
                 width: auto;
 
-                font-size: 2.5rem;
+                font-size: 1.4rem;
                 font-weight: 700;
                 background-color: rgb(145, 255, 255);
 
@@ -197,9 +200,9 @@
             }
 
             .submit__button {
-                height: 5rem;
+                height: 3rem;
                 width: 100%;
-                margin-top: 3rem;
+                margin-top: 2rem;
                 
                 border-radius: 10px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -210,7 +213,7 @@
                 cursor: pointer;
 
                 .subMit {
-                    font-size: 2rem;
+                    font-size: 1.4rem;
                     font-weight: 600;
                     background: transparent;
                     cursor: pointer;
