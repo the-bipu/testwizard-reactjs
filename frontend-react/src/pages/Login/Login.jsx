@@ -104,6 +104,7 @@ const Login = () => {
 
   return (
     <div className='login__register'>
+    
       <div className="header__login">
         <div className="container">
           <a href="/" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
