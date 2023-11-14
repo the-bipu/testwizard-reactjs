@@ -46,9 +46,9 @@ const SubjectDetail = () => {
 
         </section>
 
-            <div className="footer--sub">
-                <p>COPYRIGHT @2023 / TESTWIZARD</p>
-            </div>
+        <div className="footer--sub">
+            <p>COPYRIGHT @2023 / TESTWIZARD</p>
+        </div>
     </div>
   );
 }
