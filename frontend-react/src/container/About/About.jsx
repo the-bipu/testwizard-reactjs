@@ -33,7 +33,7 @@ const About = () => {
           {subject.slice(0, 4).map((subject, index) => (
             <div className="box" key={subject.name + index}>
                 <img src={urlFor(subject.imgUrl)} alt={subject.name} />
-                <h3>{subject.name}</h3>
+                <h4>{subject.name}</h4>
                 <p>{subject.modules}</p>
                 <a href={subject.moduleLink}>
                     <button>Take Test</button>
@@ -52,7 +52,7 @@ const About = () => {
           <a href={'/Subject'} className="view-more-sub"><button>Explore</button></a>
         </div>
 
-        <br /><br /><br />
+        <br />
 
         <h1 className="heading">main sets</h1>
 
