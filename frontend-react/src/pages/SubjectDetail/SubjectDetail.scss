@@ -12,7 +12,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: .8rem;
+        gap: .5rem;
     
         img {
             width: 250px;
@@ -22,13 +22,14 @@
         }
     
         .heading--sub {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 400;
         }
 
         .para--sub {
             font-size: 1.1rem;
             color: rgb(0, 0, 0);
-            font-weight: 800;
+            font-weight: 400;
             text-align: center;
         }
 
@@ -40,19 +41,19 @@
             gap: 1rem;
 
             .test_button {
-                color: #0eb582;
+                color: #000000;
                 background: transparent;
                 margin-top: 1rem;
-                padding: .4rem 1.4rem;
+                padding: .2rem 1.4rem;
                 font-size: 1.2rem;
-                border: 0.1rem solid #0eb582;
+                border: 0.1rem solid #000000;
                 cursor: pointer;
                 text-transform: capitalize;
             }
     
             .test_button:hover{
                 color: #fff;
-                background: #0eb582;
+                background: #000000;
             }
         }
 
