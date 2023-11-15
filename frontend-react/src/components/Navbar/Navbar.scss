@@ -1,84 +1,3 @@
-// .header {
-//     position: -webkit-sticky;
-//     position: sticky;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     background: #fff;
-//     -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-//     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-//     padding: 2rem 10%;
-//     display: -webkit-box;
-//     display: -ms-flexbox;
-//     display: flex;
-//     -webkit-box-align: center;
-//     -ms-flex-align: center;
-//     align-items: center;
-//     z-index: 1000;
-
-//     .logo {
-//         margin-right: auto;
-//         font-size: 2.5rem;
-//         text-transform: capitalize;
-//         color: #444;
-//         font-weight: bolder;
-
-//         i {
-//             color: #0eb582;
-//         }
-//     }
-    
-//     .navbar {
-//         position: relative;
-
-//         #close-navbar {
-//             position: absolute;
-//             top: 1.5rem;
-//             right: 2rem;
-//             font-size: 4rem;
-//             cursor: pointer;
-//             color: #444;
-//             display: none;
-//         }
-
-//         #close-navbar:hover {
-//             -webkit-transform: rotate(90deg);
-//             transform: rotate(90deg);
-//         }
-
-//         a {
-//             margin-right: 2rem;
-//             font-size: 2rem;
-//             font-weight: 600;
-//             text-transform: capitalize;
-//             color: #444;
-//         }
-
-//         a:hover {
-//             color: #0eb582;
-//         }
-//     }
-    
-//     .icons {
-//         display: none;
-
-//         div {
-//             cursor: pointer;
-//             font-size: 2.5rem;
-//             color: #444;
-//             margin-left: 1.5rem;
-//         }
-        
-//         div:hover {
-//             color: #0eb582;
-//         }
-//     }
-    
-//     #menu-btn {
-//         display: none;
-//     }
-// }
-
 .navbar--main {
     height: 73px;
     width: auto;
@@ -97,7 +16,7 @@
   
       .logo {
         font-size: 25px;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--black-color);
       }
   
@@ -129,9 +48,9 @@
   
         a {
           text-decoration: none;
-          font-size: 18px;
+          font-size: 20px;
           color: var(--black-color);
-          font-weight: 600;
+          font-weight: 500;
         }
 
         @media screen and (max-width: 768px) {
