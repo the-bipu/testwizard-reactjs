@@ -18,10 +18,6 @@ const Subject = () => {
           .then((data) => setSubject(data))
     }, []);
 
-    if (!subject) {
-    return <div><Loader /></div>;
-    }
-
   return (
     <div>
         <Navbar />
@@ -41,7 +37,7 @@ const Subject = () => {
                     return (
                         <div className="box" key={subject.name + index}>
                             <img src={urlFor(subject.imgUrl)} alt={subject.name} />
-                            <h3>{subject.name}</h3>
+                            <h4>{subject.name}</h4>
                             <p>{subject.subCode}</p>
                             <p>{subject.modules}</p>
                             <Link to={{
