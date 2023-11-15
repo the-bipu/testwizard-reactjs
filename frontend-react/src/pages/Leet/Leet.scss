@@ -15,41 +15,22 @@
 
             img {
                 height: 8rem;
-                margin-bottom: .7rem;
+                margin-bottom: .2rem;
                 border-radius: 50%;
             }
 
             h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 text-transform: capitalize;
                 color: #444;
-                padding: .3rem 0;
+                padding: 0;
+                font-weight: 500;
             }
 
             p {
                 font-size: 1rem;
-                line-height: 2;
+                line-height: 1.2;
                 color: #777;
-            }
-
-            a {
-                .test_button {
-                    bottom: 0;
-                    color: #000;
-                    background: transparent;
-                    margin-top: 1rem;
-                    padding: .5rem 1rem;
-                    font-size: 1rem;
-                    border: 0.1rem solid #0eb582;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    text-transform: capitalize;
-                }
-    
-                .test_button:hover{
-                    color: #fff;
-                    background: #0eb582;
-                }
             }
           }
       }
