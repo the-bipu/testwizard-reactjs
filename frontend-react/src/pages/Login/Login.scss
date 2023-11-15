@@ -40,7 +40,7 @@
 
             .logo {
                 font-size: 22px;
-                font-weight: 600;
+                font-weight: 500;
                 color: var(--black-color);
             }
         }
@@ -118,7 +118,7 @@
                     width: auto;
                     height: auto;
                     text-align: left;
-                    margin-top: 2rem;
+                    margin-top: 1.2rem;
                 }
     
                 .username__div {
@@ -142,14 +142,14 @@
 
             .route {
                 text-align: left;
-                margin-top: .5rem;
+                margin-top: .2rem;
                 font-size: 1rem;
-                font-weight: 600;
+                font-weight: 400;
 
                 button {
                     color: #000;
                     font-size: 1rem;
-                    font-weight: 600;
+                    font-weight: 500;
                     background-color: transparent;
                     cursor: pointer;
                 }
@@ -173,10 +173,10 @@
                 height: 3rem;
                 width: 100%;
                 text-indent: 1rem;
-                margin-top: .5rem;
+                margin-top: .1rem;
 
                 font-size: 1.2rem;
-                font-weight: 600;
+                font-weight: 500;
                 
                 border-radius: 10px;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
