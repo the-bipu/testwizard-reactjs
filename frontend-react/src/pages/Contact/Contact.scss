@@ -5,11 +5,11 @@
         display: grid;
         -ms-grid-columns: (minmax(18rem, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-        gap: 2rem;
+        gap: 1.6rem;
 
         .icons {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 1.5rem .8rem;
             border: 0.1rem solid #0eb582;
             background: #f0fdfa;
 
@@ -33,7 +33,7 @@
 
             p {
                 font-size: 1rem;
-                line-height: 2;
+                line-height: 1.4;
                 color: #777;
             }
           }
