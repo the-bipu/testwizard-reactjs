@@ -1,0 +1,28 @@
+.box {
+    a {
+        text-decoration: none; 
+        color: #000; 
+        font-weight: 600;
+
+        button {
+            display: inline-block; 
+            margin-top: 1rem; 
+            padding: .2rem 1.2rem; 
+            font-size: 1.2rem; 
+            border: 0.1rem solid #0eb582; 
+            background: transparent; 
+            color: #0eb582;
+            cursor: pointer; 
+            text-transform: capitalize;
+        }
+    
+        button:hover {
+            background: var(--green-color);
+            color: #fff;
+        }
+    }
+
+    a:hover {
+        color: #fff;
+    }
+}
