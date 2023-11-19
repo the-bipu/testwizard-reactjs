@@ -132,11 +132,11 @@ export default function SubjectTest(props) {
             </div>
 
             <div className='quiz--div'>
-                {startBtnVisible && 
+                {/* {startBtnVisible && 
                     <div className="start_btn">
                         <button onClick={handleStartBtnClick}>Start Exam</button>
                     </div>
-                }
+                } */}
 
                 {infoBoxVisible && 
                     <div className="info_box">
@@ -158,7 +158,7 @@ export default function SubjectTest(props) {
                     </div>
                 }
 
-                {quizBoxVisible && 
+                {/* {quizBoxVisible &&  */}
                     <div className="quiz_box">
                         {timerStarted && 
                             <div className='quiz_box--header'>
@@ -170,7 +170,7 @@ export default function SubjectTest(props) {
                             </div>
                         }
 
-                        <section>
+                        <section id='questionDiv'>
                             <div className="que_text">
                                 {questions[currentQuestion].question}
                             </div>
@@ -187,7 +187,7 @@ export default function SubjectTest(props) {
                             </div>
                         </section>
 
-                        <footer>
+                        <footer id='quizBox-Footer'>
                             <div className="total_que">
                                 {currentQuestion + 1} / {questions.length}
                             </div>
@@ -198,7 +198,7 @@ export default function SubjectTest(props) {
                             )}
                         </footer>
                     </div>
-                }
+                {/* } */}
 
 
                 {quizCompleted && 
