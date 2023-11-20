@@ -75,8 +75,28 @@
     color: #fff;
 }
 
+.quizData-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+
+    .quizData-card {
+        border: 2px solid #0eb582;
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem;
+        flex-direction: column;
+    }
+}
+
 .footer--sub {
-    position: absolute;
+    position: relative;
     background-color: #dcfcf5;
     bottom: 0;
     width: 100%;
