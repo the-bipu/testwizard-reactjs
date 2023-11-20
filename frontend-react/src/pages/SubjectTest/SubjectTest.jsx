@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
+import { UserContext } from '../../context/userContext';
 
-import { images } from '../../constants';
 import './SubjectTest.scss';
 
 export default function SubjectTest(props) {
+    const { isLoggedIn, handleLogout, loggedInUsername } = useContext(UserContext);
 
     const [questions, setQuestions] = useState([
         {
@@ -68,6 +70,23 @@ export default function SubjectTest(props) {
         return () => clearInterval(timer);
     }, [timeLeft, timerStarted]);
 
+    const sendQuizResultsToDatabase = () => {
+        const userData = {
+            username: loggedInUsername,
+            subject: subjectName,
+            marks: score+1
+        };
+    
+        // API call to send data to the backend
+        axios.post('http://localhost:5555/quiz/add', userData)
+            .then(response => {
+                console.log('Data sent to the database:', response.data);
+            })
+            .catch(error => {
+                console.error('Error storing data in the database:', error);
+            });
+    };
+
     // handle the click of Start Button
     const handleStartBtnClick = () => {
         setStartBtnVisible(false);
@@ -98,7 +117,7 @@ export default function SubjectTest(props) {
     const handleNextBtnClick = () => {
         // Check if selected option is correct and update score
         if (selectedOption === questions[currentQuestion].correctAnswer) {
-            setScore(score + 1);
+            setScore(prevScore => prevScore + 1);
         }
 
         // Check if the questions remain then show next else end the quiz
@@ -108,10 +127,10 @@ export default function SubjectTest(props) {
         } else {
             setQuizCompleted(true);
             setQuizBoxVisible(false);
+            {isLoggedIn && sendQuizResultsToDatabase();}
         }
     };
-    
-    // Check if an option is selected
+
     const isNextButtonVisible = selectedOption !== null;
 
     const { subjectName, subCode } = useParams();
