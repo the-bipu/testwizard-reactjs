@@ -9,7 +9,7 @@
 
         .icons {
             text-align: center;
-            padding: 1.5rem .8rem;
+            padding: 1.5rem 3rem;
             border: 0.1rem solid #0eb582;
             background: #f0fdfa;
 
@@ -28,7 +28,7 @@
                 font-size: 1.5rem;
                 text-transform: capitalize;
                 color: #444;
-                padding: .5rem 0;
+                padding: 0;
             }
 
             p {
@@ -92,6 +92,18 @@
         align-items: flex-start;
         padding: 1rem;
         flex-direction: column;
+    }
+
+    .delete-btn {
+        border: 2px solid #0eb582;
+        padding: .2rem 1rem;
+        margin-top: 1rem;
+        background-color: #f0fdfa;
+    }
+
+    .delete-btn:hover {
+        color: white;
+        background-color: #0eb582;
     }
 }
 
