@@ -43,4 +43,22 @@ router.get('/get/:username', async (req, res) => {
   }
 });
 
+router.delete('/delete/:quizId', async (req, res) => {
+  try {
+    const quizId = req.params.quizId;
+
+    // Find the quiz by its ID and delete it from the database
+    const deletedQuiz = await Quiz.findByIdAndDelete(quizId);
+
+    if (!deletedQuiz) {
+      return res.status(404).json({ message: 'Quiz not found or already deleted' });
+    }
+
+    res.status(200).json({ message: 'Quiz deleted successfully', deletedQuiz });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 export default router;
