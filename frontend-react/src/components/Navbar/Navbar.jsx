@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 
 import './Navbar.scss';
 
 const Navbar = () => {
-
+  const { isLoggedIn } = useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   
   const toggleNavbar = () => {
@@ -26,7 +27,7 @@ const Navbar = () => {
                 <Link to="/Leet">Leet</Link>
                 <Link to="/AboutPage">About</Link>
                 <Link to="/Contact">Contact</Link>
-                <Link to="/Login">Login</Link>
+                {isLoggedIn ? <Link to="/Dashboard">Dashboard</Link> : <Link to="/Login">Login</Link>}
             </nav>
 
       </div>
@@ -39,7 +40,7 @@ const Navbar = () => {
         <Link to="/Leet">Leet</Link>
         <Link to="/AboutPage">About</Link>
         <Link to="/Contact">Contact</Link>
-        <Link to="/Login">Login</Link>
+        {isLoggedIn ? <Link to="/Dashboard">Dashboard</Link> : <Link to="/Login">Login</Link>}
       </div>
 
     </div>
