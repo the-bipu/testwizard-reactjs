@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { images } from '../../constants';
 import './Login.scss';
@@ -6,17 +6,16 @@ import './Login.scss';
 const Login = () => {
 
   const [isLogin, setIsLogin] = useState(true);
+  const [loginData, setLoginData] = useState({ username: '', password: '' });
+  const [registerData, setRegisterData] = useState({ email: '', username: '', password: '' });
 
-  const [loginData, setLoginData] = useState({
-    username: '',
-    password: ''
-  });
-
-  const [registerData, setRegisterData] = useState({
-    email: '',
-    username: '',
-    password: ''
-  });
+  // Retrieve data from localStorage on component mount
+  useEffect(() => {
+    const storedLoggedInStatus = localStorage.getItem('isLoggedIn') === 'true';
+    const storedUsername = localStorage.getItem('loggedInUsername') || '';
+    setLoggedIn(storedLoggedInStatus);
+    setLoggedInUsername(storedUsername);
+  }, []);
 
   // New state to track user login status
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -44,6 +43,8 @@ const Login = () => {
   };
 
   const handleLogout = () => {
+    localStorage.setItem('isLoggedIn', false);
+    localStorage.setItem('loggedInUsername', '');
     setLoggedIn(false);
     setLoggedInUsername('');
   };
@@ -82,11 +83,12 @@ const Login = () => {
 
       if (response.ok) {
         window.alert(isLogin ? 'Login Successful!' : 'Registration Successful!');
-        if(isLogin) {
-          setLoggedIn(true);
-          setLoggedInUsername(loginData.username);
-        }
+        setLoggedIn(true);
+        setLoggedInUsername(isLogin ? loginData.username : registerData.username);
+
+        window.location.href = '/';
         console.log('Success');
+
         isLogin
         ? setLoginData({ username: '', password: '' })
         : setRegisterData({ email: '', username: '', password: '' });
@@ -100,7 +102,13 @@ const Login = () => {
     } catch (error) {
       console.error('Error:', error);
     }
-}
+  }
+
+  // Update localStorage when the login status changes
+  useEffect(() => {
+    localStorage.setItem('isLoggedIn', isLoggedIn);
+    localStorage.setItem('loggedInUsername', loggedInUsername);
+  }, [isLoggedIn, loggedInUsername]);
 
   return (
     <div className='login__register'>
@@ -113,13 +121,7 @@ const Login = () => {
 
       <div>
 
-        {isLoggedIn ? (
-          <div>
-            <p>Welcome, {loggedInUsername}!</p>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        ) : (
-          <div className='main__content'>
+      <div className='main__content'>
             <div className="main__illust">
               <img src={images.login} alt="" />
             </div>
@@ -193,7 +195,6 @@ const Login = () => {
 
             </div>
           </div>
-        )}
 
       </div>
       
