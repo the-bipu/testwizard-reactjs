@@ -4,6 +4,7 @@ export { default as Subject } from './Subject/Subject';
 export { default as Leet } from './Leet/Leet';
 export { default as Contact } from './Contact/Contact';
 export { default as Login } from './Login/Login';
+export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as Terms } from './Extra/Terms/Terms';
 export { default as SubjectTest } from './SubjectTest/SubjectTest';
 export { default as SubjectDetail } from './SubjectDetail/SubjectDetail';
