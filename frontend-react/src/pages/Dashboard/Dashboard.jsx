@@ -11,27 +11,13 @@ const Dashboard = () => {
     const [quizData, setQuizData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     axios
-    //       .get(`http://localhost:5555/quiz/get/${loggedInUsername}`)
-    //       .then((response) => {
-    //         setQuizData(response.data.quizzes);
-    //         console.log(quizData);
-    //         console.log(loggedInUsername);
-    //         console.log('quizdata');
-    //       })
-    //       .catch((error) => {
-    //         console.log(error);
-    //       });
-    //   }, []);
-
-    const url = `http://localhost:5555/quiz/get/${loggedInUsername}`;
-    console.log(url);
+    const getUrl = `http://localhost:5555/quiz/get/${loggedInUsername}`;
+    console.log(getUrl);
 
     useEffect(() => {
         if (isLoggedIn) {
             // Fetch quiz data for the logged-in user
-            fetch(url)
+            fetch(getUrl)
                 .then(response => response.json())
                 .then(data => {
                     setQuizData(data.quizzes);
@@ -43,6 +29,16 @@ const Dashboard = () => {
                 });
         }
     }, [isLoggedIn, loggedInUsername]);
+
+    const deleteQuiz = async (quizId) => {
+        try {
+          const response = await axios.delete(`http://localhost:5555/quiz/delete/${quizId}`);
+          console.log(response.data.message);
+          setQuizData(quizData.filter(quiz => quiz._id !== quizId));
+        } catch (error) {
+          console.error('Error deleting quiz:', error);
+        }
+      };
 
     console.log(quizData);
     console.log(loggedInUsername);
@@ -80,7 +76,7 @@ const Dashboard = () => {
                         <div className="icons">
                             <i className="fas fa-user"></i>
                             <h3>{loggedInUsername}</h3>
-                            <p>Welcome to TestWizard! Explore our services and resources by signing in. Once you're logged in, you can access a wide range of features and personalized content. Dive into subjects, practice LeetCode problems, and discover more about our platform's offerings. Get ready to elevate your learning experience!</p>
+                            <p>Welcome to TestWizard! Explore our services and resources by signing in. Once you're logged in, you can access a wide range of features and personalized content. Dive into subjects, practice Quiz problems, and discover more about our platform's offerings. Get ready to elevate your learning experience!</p>
                             <button className='logout-btn' onClick={handleLogout}>Logout</button>
                             {loading ? (
                             <p>Loading...</p>
@@ -89,9 +85,11 @@ const Dashboard = () => {
                                     {quizData.map((quiz, index) => (
                                         <div key={index} className="quizData-card">
                                             <h3>Quiz {index + 1}</h3>
+                                            <p>Subject: {quiz.subject}</p>
                                             <p>Marks: {quiz.marks}</p>
                                             <p>Time: {formatTimeToAMPM(quiz.time)}</p>
                                             <p>Date: {formatDate(quiz.date)}</p>
+                                            <button onClick={() => deleteQuiz(quiz._id)} className='delete-btn'>Delete</button>
                                         </div>
                                     ))}
                                 </div>
