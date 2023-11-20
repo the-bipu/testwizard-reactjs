@@ -4,6 +4,7 @@ import { PORT, URI } from "./config.js";
 import mongoose from 'mongoose';
 import filesRoute from './routes/filesRoute.js';
 import userRoute from './routes/userRoute.js';
+import quizRoute from './routes/quizRoute.js';
 
 const app = express();
 
@@ -18,8 +19,10 @@ app.get('/', (request, response) => {
     return response.status(234).send('Welcome to the Main Page');
 });
 
+
 app.use('/files', filesRoute);
 app.use('/api/users', userRoute);
+app.use('/quiz', quizRoute);
 
 mongoose
     .connect(URI)
