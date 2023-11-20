@@ -12,7 +12,7 @@ const Contact = () => {
 
         <section className="heading-link">
             <h3>contact us</h3>
-            <p> <a href="index">home</a> / contact </p>
+            <p> <a href="/">home</a> / contact </p>
         </section>
 
         <section className="contact">

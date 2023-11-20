@@ -12,7 +12,7 @@ const Terms = () => {
 
         <section className="heading-link">
             <h3>Terms and Conditions</h3>
-            <p> <a href="index.php">home</a> / terms </p>
+            <p> <a href="/">home</a> / terms </p>
         </section>
 
         <section className="content">

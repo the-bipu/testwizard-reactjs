@@ -31,7 +31,7 @@ const AboutPage = () => {
 
         <section className="heading-link">
             <h3>about us</h3>
-            <p> <a href="./home">home</a> / about </p>
+            <p> <a href="/">home</a> / about </p>
         </section>
 
         <section className="content">
