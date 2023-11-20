@@ -3,28 +3,43 @@ import React, { useState, useEffect } from 'react';
 import './Leet.scss';
 
 import { Footer } from '../../container';
-import { Navbar } from '../../components';
+import { Navbar, Spinner } from '../../components';
 
 import { urlFor, client } from '../../client';
 
 const Leet = () => {
 
     const [leet, setLeet] = useState([]);
-    const [leetNotes, setLeetNotes] = useState([])
+    const [leetNotes, setLeetNotes] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const query = `*[_type == "leet"] | order(title asc)`;
     
         client.fetch(query)
-          .then((data) => setLeet(data))
-      }, [])
+        .then((data) => {
+            setLeet(data);
+            setIsLoading(false);
+        })
+        .catch((error) => {
+            console.error("Error fetching subject:", error);
+            setIsLoading(false);
+        });
+    }, []);
 
     useEffect(() => {
         const query = `*[_type == "leetnotes"] | order(title asc)`;
     
         client.fetch(query)
-          .then((data) => setLeetNotes(data))
-      }, [])
+        .then((data) => {
+            setLeetNotes(data);
+            setIsLoading(false);
+        })
+        .catch((error) => {
+            console.error("Error fetching subject:", error);
+            setIsLoading(false);
+        });
+    }, []);
 
   return (
     <div>
@@ -32,14 +47,16 @@ const Leet = () => {
 
         <section className="heading-link">
             <h3>LEET</h3>
-            <p> <a href="index.php">home</a> / LEET </p>
+            <p> <a href="/">home</a> / LEET </p>
         </section>
 
         <section className="subjects">
 
             <h1 className="heading">Syllabus + Notes</h1>
 
-            <div className="box-container">
+            {isLoading
+            ? <div><Spinner /></div>
+            : <div className="box-container">
 
                 {leetNotes.map((leetNotes, index) => (
                     <div className="box" key={leetNotes.name + index}>
@@ -56,7 +73,7 @@ const Leet = () => {
                     </div>
                 ))}
 
-            </div>
+            </div>}
             <br /><br />
 
             <h1 className="heading">Test Papers</h1>
@@ -64,20 +81,22 @@ const Leet = () => {
             {/* 20 mathematics, 15 physics and 15 chemistry
             50 minutes for 50 questions */}
 
-            <div className="box-container">
+            {isLoading
+            ? <div><Spinner /></div>
+            : <div className="box-container">
 
                 {leet.map((leet, index) => (
-                        <div className="box" key={leet.name + index}>
-                            <img src={urlFor(leet.imgUrl)} alt={leet.name} />
-                            <h3>{leet.name}</h3>
-                            <p>{leet.year}</p>
-                            <a href={leet.moduleLink}>
-                                <button>Take Test</button>
-                            </a>
-                        </div>
+                    <div className="box" key={leet.name + index}>
+                        <img src={urlFor(leet.imgUrl)} alt={leet.name} />
+                        <h3>{leet.name}</h3>
+                        <p>{leet.year}</p>
+                        <a href={leet.moduleLink}>
+                            <button>Take Test</button>
+                        </a>
+                    </div>
                 ))}
 
-            </div>
+            </div>}
             <br /><br />
 
         </section>
