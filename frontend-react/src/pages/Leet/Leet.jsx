@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './Leet.scss';
 
@@ -90,9 +91,11 @@ const Leet = () => {
                         <img src={urlFor(leet.imgUrl)} alt={leet.name} />
                         <h3>{leet.name}</h3>
                         <p>{leet.year}</p>
-                        <a href={leet.moduleLink}>
+                        <Link to={{
+                            pathname: `/leetTest/${leet.year}`
+                        }}>
                             <button>Take Test</button>
-                        </a>
+                        </Link>
                     </div>
                 ))}
 
