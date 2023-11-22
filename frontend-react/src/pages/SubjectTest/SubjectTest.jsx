@@ -6,7 +6,7 @@ import { UserContext } from '../../context/userContext';
 import './SubjectTest.scss';
 
 export default function SubjectTest(props) {
-    const { isLoggedIn, handleLogout, loggedInUsername } = useContext(UserContext);
+    const { isLoggedIn, loggedInUsername } = useContext(UserContext);
 
     const [questions, setQuestions] = useState([
         {
