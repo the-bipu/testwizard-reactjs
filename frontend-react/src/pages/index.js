@@ -7,4 +7,5 @@ export { default as Login } from './Login/Login';
 export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as Terms } from './Extra/Terms/Terms';
 export { default as SubjectTest } from './SubjectTest/SubjectTest';
+export { default as LeetTest } from './LeetTest/LeetTest';
 export { default as SubjectDetail } from './SubjectDetail/SubjectDetail';
