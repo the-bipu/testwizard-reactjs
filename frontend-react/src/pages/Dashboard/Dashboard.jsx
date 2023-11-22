@@ -38,11 +38,7 @@ const Dashboard = () => {
         } catch (error) {
           console.error('Error deleting quiz:', error);
         }
-      };
-
-    console.log(quizData);
-    console.log(loggedInUsername);
-    console.log('another');
+    };
 
     // Define functions to format time and date
     const formatTimeToAMPM = (seconds) => {
