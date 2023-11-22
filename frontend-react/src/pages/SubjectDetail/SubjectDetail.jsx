@@ -46,7 +46,7 @@ const SubjectDetail = () => {
 
         </section>
 
-        <div className="footer--sub">
+        <div className="footer--subdetails">
             <p>COPYRIGHT @2023 / TESTWIZARD</p>
         </div>
     </div>
