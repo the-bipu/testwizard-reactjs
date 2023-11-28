@@ -3,39 +3,18 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../../context/userContext';
 
+import questionsData from './questions.json';
+
 import './LeetTest.scss';
 
 export default function LeetTest(props) {
     const { isLoggedIn, loggedInUsername } = useContext(UserContext);
 
-    const [questions, setQuestions] = useState([
-        {
-            question: "What is the capital of France?",
-            options: ["Berlin", "Madrid", "Paris", "London"],
-            correctAnswer: "Paris",
-        },
-        {
-            question: "What is the capital of France?",
-            options: ["Berlin", "Madrid", "Paris", "London"],
-            correctAnswer: "Paris",
-        },
-        {
-            question: "What is the capital of France?",
-            options: ["Berlin", "Madrid", "Paris", "London"],
-            correctAnswer: "Paris",
-        },
-        {
-            question: "What is the capital of France?",
-            options: ["Berlin", "Madrid", "Paris", "London"],
-            correctAnswer: "Paris",
-        },
-        {
-            question: "What is the capital of France?",
-            options: ["Berlin", "Madrid", "Paris", "London"],
-            correctAnswer: "Paris",
-        },
-        // Add more questions here
-    ]);
+    const [questions, setQuestions] = useState([]);
+
+    useEffect(() => {
+        setQuestions(questionsData);
+    }, []);
 
     // For checking if the quiz ends and to start timer
     const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
