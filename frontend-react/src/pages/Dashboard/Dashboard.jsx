@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { UserContext } from '../../context/userContext';
 import axios from 'axios';
+import { AlertDialog, Flex, Button } from '@radix-ui/themes';
 
 import { Navbar } from '../../components';
 import { Link } from 'react-router-dom';
@@ -73,7 +74,31 @@ const Dashboard = () => {
                             <i className="fas fa-user"></i>
                             <h3>{loggedInUsername}</h3>
                             <p>Welcome to TestWizard! Explore our services and resources by signing in. Once you're logged in, you can access a wide range of features and personalized content. Dive into subjects, practice Quiz problems, and discover more about our platform's offerings. Get ready to elevate your learning experience!</p>
-                            <button className='logout-btn' onClick={handleLogout}>Logout</button>
+                            <AlertDialog.Root>
+                                <AlertDialog.Trigger>
+                                    <button className='logout-btn'>Logout</button>
+                                </AlertDialog.Trigger>
+                                <AlertDialog.Content style={{ maxWidth: 450 }}>
+                                    <AlertDialog.Title>Revoke access</AlertDialog.Title>
+                                    <AlertDialog.Description size="2">
+                                    Are you sure? This application will no longer be accessible and any
+                                    existing sessions will be expired.
+                                    </AlertDialog.Description>
+
+                                    <Flex gap="3" mt="4" justify="end">
+                                    <AlertDialog.Cancel>
+                                        <Button variant="soft" color="gray">
+                                        Cancel
+                                        </Button>
+                                    </AlertDialog.Cancel>
+                                    <AlertDialog.Action>
+                                        <Button variant="solid" color="red" onClick={handleLogout}>
+                                        Revoke access
+                                        </Button>
+                                    </AlertDialog.Action>
+                                    </Flex>
+                                </AlertDialog.Content>
+                            </AlertDialog.Root>
                             {loading ? (
                             <p>Loading...</p>
                             ) : (
