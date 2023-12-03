@@ -17,6 +17,9 @@ router.post('/register', async (req, res) => {
 
         // Create a new user
         const user = new User({ username, email, password });
+
+        const token = await user.generateAuthToken();
+
         await user.save();
 
         res.status(201).json({ message: 'User registered successfully' });
@@ -41,6 +44,8 @@ router.post('/login', async (req, res) => {
 
         // Find the user by username
         const user = await User.findOne({ username });
+
+        const token = await user.generateAuthToken();
 
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
