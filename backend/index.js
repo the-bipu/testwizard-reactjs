@@ -1,5 +1,6 @@
 import express from "express";
 import cors from 'cors'; // Add this import
+import jwt from 'jsonwebtoken';
 import { PORT, URI } from "./config.js";
 import mongoose from 'mongoose';
 import filesRoute from './routes/filesRoute.js';
