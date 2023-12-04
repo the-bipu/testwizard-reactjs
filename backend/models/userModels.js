@@ -36,9 +36,11 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function(next) {
     try {
-        // const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(this.password);
-        this.password = hashedPassword;
+        if (this.isModified('password')) {
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(this.password, salt);
+            this.password = hashedPassword;
+        }
         next();
     } catch (error) {
         console.error('Error in pre save:', error);
@@ -48,8 +50,8 @@ userSchema.pre('save', async function(next) {
 
 userSchema.methods.comparePassword = async function(candidatePassword) {
     try {
-        console.log(candidatePassword + " " + this.password.toString());
-        return await bcrypt.compare(candidatePassword, this.password.toString());
+        console.log(candidatePassword + " " + this.password);
+        return await bcrypt.compare(candidatePassword, this.password);
     } catch (error) {
         throw new Error('Error in comparePassword: ' + error);
     }
