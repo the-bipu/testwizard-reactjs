@@ -22,7 +22,7 @@ app.get('/', (request, response) => {
 
 
 app.use('/files', filesRoute);
-app.use('/api/users', userRoute);
+app.use('/users', userRoute);
 app.use('/quiz', quizRoute);
 
 mongoose
