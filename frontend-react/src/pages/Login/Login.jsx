@@ -65,8 +65,8 @@ const Login = () => {
     };
 
     const url = isLogin
-    ? 'http://localhost:5555/api/users/login'
-    : 'http://localhost:5555/api/users/register';
+    ? 'http://localhost:5555/users/login'
+    : 'http://localhost:5555/users/register';
 
     try {
       const formData = isLogin ? loginData : registerData;

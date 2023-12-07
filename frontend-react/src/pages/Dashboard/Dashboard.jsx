@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [quizData, setQuizData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const getUrl = `http://localhost:5555/api/users/${loggedInUsername}`;
+    const getUrl = `http://localhost:5555/users/${loggedInUsername}`;
     console.log(getUrl);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const Dashboard = () => {
             fetch(getUrl)
                 .then(response => response.json())
                 .then(data => {
-                    setQuizData(data.quizzes);
+                    setQuizData(data?.quizzes);
                     setLoading(false);
                 })
                 .catch(error => {
