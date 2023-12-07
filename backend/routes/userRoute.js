@@ -1,4 +1,6 @@
 import express from 'express';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { User } from '../models/userModels.js';
 
 const router = express.Router();
@@ -37,21 +39,24 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({ username });
 
         if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        } else {
-            // Check if the entered password matches the stored hashed password
-            const isPasswordValid = await user.comparePassword(password);
-
-            if (!isPasswordValid) {
-                return res.status(401).json({ message: 'Invalid password' });
-            } else {
-                // Generate and retrieve the authentication token
-                const token = await user.generateAuthToken();
-                
-                // Return success response with token
-                res.status(200).json({ message: 'Login successful as User.', isAdmin: user.isAdmin, token });
-            }
+            return res.status(401).json({ message: 'Invalid username or password' });
         }
+
+        // Compare the provided password with the hashed password
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: 'Invalid username or password' });
+        }
+
+        // Generate authentication token
+        const token = jwt.sign({ _id: user._id.toString() }, "thisisastringthatisneededforthegeneratingtoken");
+
+        // Save token to the user's tokens array
+        user.tokens = user.tokens.concat({ token });
+        await user.save();
+
+        res.status(200).json({ token });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
