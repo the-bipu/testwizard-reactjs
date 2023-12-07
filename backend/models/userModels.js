@@ -34,28 +34,23 @@ const userSchema = new mongoose.Schema({
     }]
 });
 
+// Hashing the password before saving it to the database
 userSchema.pre('save', async function(next) {
-    try {
-        if (this.isModified('password')) {
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(this.password, salt);
-            this.password = hashedPassword;
-        }
-        next();
-    } catch (error) {
-        console.error('Error in pre save:', error);
-        next(error);
+    const user = this;
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 10);
     }
+    next();
 });
 
+// Method to compare passwords
 userSchema.methods.comparePassword = async function(candidatePassword) {
     try {
-        console.log(candidatePassword + " " + this.password);
         return await bcrypt.compare(candidatePassword, this.password);
     } catch (error) {
-        throw new Error('Error in comparePassword: ' + error);
+        throw new Error(error);
     }
-};
+}
 
 userSchema.methods.generateAuthToken = async function() {
     try {
