@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { images } from '../../constants';
 import './Login.scss';
+import { Navbar } from '../../components/index.js';
 
 const Login = () => {
 
@@ -52,21 +53,21 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(isLogin){
-      if(loginData.username === "" || loginData.password === ""){
+    if (isLogin) {
+      if (loginData.username === "" || loginData.password === "") {
         window.alert("Fill all the areas first 👽. Then Only You'll get the entry !! 🚀🫰");
         return;
       }
     } else {
-      if(registerData.username === "" || registerData.password === "" || registerData.email === ""){
+      if (registerData.username === "" || registerData.password === "" || registerData.email === "") {
         window.alert("Fill all the areas first 👽. Then Only You'll get the entry !! 🚀🫰");
         return;
       }
     };
 
     const url = isLogin
-    ? 'http://localhost:5555/users/login'
-    : 'http://localhost:5555/users/register';
+      ? 'http://localhost:5555/users/login'
+      : 'http://localhost:5555/users/register';
 
     try {
       const formData = isLogin ? loginData : registerData;
@@ -90,14 +91,14 @@ const Login = () => {
         console.log('Success');
 
         isLogin
-        ? setLoginData({ username: '', password: '' })
-        : setRegisterData({ email: '', username: '', password: '' });
+          ? setLoginData({ username: '', password: '' })
+          : setRegisterData({ email: '', username: '', password: '' });
       } else {
         window.alert(`Operation failed: ${result.message}`);
         console.error('Failed');
         isLogin
-        ? setLoginData({ username: '', password: '' })
-        : setRegisterData({ email: '', username: '', password: '' });
+          ? setLoginData({ username: '', password: '' })
+          : setRegisterData({ email: '', username: '', password: '' });
       }
     } catch (error) {
       console.error('Error:', error);
@@ -111,94 +112,125 @@ const Login = () => {
   }, [isLoggedIn, loggedInUsername]);
 
   return (
-    <div className='login__register'>
+    <>
+      <div className='login__register'>
 
-      <div className="header__login">
-        <div className="container">
-          <a href="/" className="logo"> <i className="fas fa-lightbulb"></i> TestWizard </a>
-        </div>
-      </div>
+      <Navbar />
 
-      <div>
+        <div className='main__content'>
 
-      <div className='main__content'>
-            <div className="main__illust">
-              <img src={images.login} alt="" />
-            </div>
+          <div className="content__div">
 
-            <div className="content__div">
+            <form action='' onSubmit={handleSubmit}>
 
-              <form action='' onSubmit={handleSubmit}>
+              <div className="login__div" style={{ display: isLogin ? 'block' : 'none' }}>
 
-                <div className="login__div" style={{ display: isLogin ? 'block' : 'none' }}>
+                <div className='heading__div'>Welcome Master 🤖</div>
 
-                  <div className='heading__div'>Login</div>
-
-                  <div className="username__div">
-                    <label htmlFor="Username" className='label__input'>Username</label>
-                    <input type="text" name='username' onChange={handleInputChange} title='Must be a valid Username' className='username__input input__box' required={isLogin} />
-                  </div>
-
-                  <div className="password__div">
-                    <label htmlFor="Password" className='label__input'>Password</label>
-                    <input type="password" name='password' onChange={handleInputChange} title='Must be at least 6 characters' className='password__input input__box' required={isLogin} />
-                  </div>
-
-                  <div className="password__route route">
-                    <button type='button' href="">Forget Password !?</button>
-                  </div>
-
-                  <div className="submit__button">
-                    <button type='submit' className='subMit'>Submit</button>
-                  </div>
-
-                  <div className="register__route route">
-                    Don't have an account?
-                    &nbsp;
-                    <button type='button' onClick={toggleLogin}>Sign Up</button>
-                  </div>
-
+                <div className="username__div">
+                  <label htmlFor="Username" className='label__input'>Username</label>
+                  <input type="text" name='username' onChange={handleInputChange} title='Must be a valid Username' className='username__input input__box' required={isLogin} />
                 </div>
 
-                <div className="register__div" style={{ display: isLogin ? 'none' : 'block' }}>
-
-                  <div className='heading__div'>Register</div>
-
-                  <div className="email__div">
-                    <label htmlFor="Email" className='label__input'>Email</label>
-                    <input type="email" name="email" onChange={handleInputChange} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Must be a valid Email" className="email__input input__box" required={!isLogin} />
-                  </div>
-
-                  <div className="username__div">
-                    <label htmlFor="Username" className='label__input'>Username</label>
-                    <input type="text" name="username" onChange={handleInputChange} title='Must be a valid Username' pattern='[a-zA-Z0-9_]{3,}' className='username__input input__box' required={!isLogin} />
-                  </div>
-
-                  <div className="password__div">
-                    <label htmlFor="Passoword" className='label__input'>Password</label>
-                    <input type="password" name="password" onChange={handleInputChange} title='Must be at least 6 characters' pattern='[a-zA-Z0-9]{6,}' className='password__input input__box' required={!isLogin} />
-                  </div>
-
-                  <div className="submit__button">
-                    <button type='submit' className='subMit'>Submit</button>
-                  </div>
-
-                  <div className="register__route route">
-                    Already have an account?
-                    &nbsp;
-                    <button type='button' onClick={toggleLogin}>Login</button>
-                  </div>
-
+                <div className="password__div">
+                  <label htmlFor="Password" className='label__input'>Password</label>
+                  <input type="password" name='password' onChange={handleInputChange} title='Must be at least 6 characters' className='password__input input__box' required={isLogin} />
                 </div>
 
-              </form>
+                <div className="password__route route">
+                  <button type='button' href="">Forget Password !?</button>
+                </div>
 
-            </div>
+                <div className="submit__button">
+                  <button type='submit' className='subMit'>Submit</button>
+                </div>
+
+                <div className="register__route route">
+                  Don't have an account?
+                  &nbsp;
+                  <button type='button' onClick={toggleLogin}>Sign Up</button>
+                </div>
+
+              </div>
+
+              <div className="register__div" style={{ display: isLogin ? 'none' : 'block' }}>
+
+                <div className='heading__div'>Join Our Community !! 💻</div>
+
+                <div className="main--contentDiv">
+                  <div className="first--section">
+                    <div className="email__div">
+                      <label htmlFor="Email" className='label__input'>Email</label>
+                      <input type="email" name="email" onChange={handleInputChange} pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Must be a valid Email" className="email__input input__box" required={!isLogin} />
+                    </div>
+
+                    <div className="names--div">
+                      <div className="username__div">
+                        <label htmlFor="Name" className='label__input'>First Name</label>
+                        <input type="text" name="fname" onChange={handleInputChange} pattern="[a-zA-Z]" className="username__input input__box" required={!isLogin} />
+                      </div>
+
+                      <div className="username__div">
+                        <label htmlFor="Name" className='label__input'>Second Name</label>
+                        <input type="text" name="sname" onChange={handleInputChange} pattern="[a-zA-Z]" className="username__input input__box" required={!isLogin} />
+                      </div>
+                    </div>
+
+                    <div className="age--type">
+                      <div className="age--div">
+                        <label htmlFor="Name" className='label__input'>Age</label>
+                        <input type="number" name="fname" onChange={handleInputChange} pattern="[0-9]" className="username__input input__box" required={!isLogin} />
+                      </div>
+
+                      <div className="gender--div">
+                        <label htmlFor="Name" className='label__input'>Gender</label>
+                        <input type="text" name="fname" onChange={handleInputChange} pattern="[0-9]" className="username__input input__box" required={!isLogin} />
+                      </div>
+                    </div>
+
+                    <div className="username__div">
+                      <label htmlFor="Phone" className='label__input'>Phone Number</label>
+                      <input type="number" name="phone" onChange={handleInputChange} pattern="[0-9._]" title="Must be a valid Number" className="email__input input__box" required={!isLogin} />
+                    </div>
+                  </div>
+
+                  <div className="second--section">
+                    <div className="username__div">
+                      <label htmlFor="Username" className='label__input'>Username</label>
+                      <input type="text" name="username" onChange={handleInputChange} title='Must be a valid Username' pattern='[a-zA-Z0-9_]{3,}' className='username__input input__box' required={!isLogin} />
+                    </div>
+
+                    <div className="password__div">
+                      <label htmlFor="Passoword" className='label__input'>Password</label>
+                      <input type="password" name="password" onChange={handleInputChange} title='Must be at least 6 characters' pattern='[a-zA-Z0-9]{6,}' className='password__input input__box' required={!isLogin} />
+                    </div>
+
+                    <div className="submit__button">
+                      <button type='submit' className='subMit'>Submit</button>
+                    </div>
+
+                    <div className="register__route route">
+                      Already have an account?
+                      &nbsp;
+                      <button type='button' onClick={toggleLogin}>Login</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+
           </div>
+        </div>
+
+        <div className="footer--login">
+            <p>COPYRIGHT @2023 / TESTWIZARD</p>
+        </div>
 
       </div>
-      
-    </div>
+
+    </>
   )
 }
 
