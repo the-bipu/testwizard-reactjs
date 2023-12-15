@@ -7,6 +7,8 @@ import bb8 from '../assets/bb-8.jpg';
 import grogu from '../assets/grogu.jpg';
 import login from '../assets/login.png';
 
+import warbg from '../assets/war.jpg';
+
 import about1 from '../assets/about--1.png';
 import about2 from '../assets/about--2.png';
 import about3 from '../assets/about--3.png';
@@ -26,4 +28,5 @@ export default {
   about2,
   about3,
   about4,
+  warbg,
 };
