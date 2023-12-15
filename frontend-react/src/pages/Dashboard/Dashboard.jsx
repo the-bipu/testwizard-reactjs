@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 import './Dashboard.scss'
 
 const Dashboard = () => {
-    const { isLoggedIn, handleLogout, loggedInUsername } = useContext(UserContext);
+    const {isLoggedIn, handleLogout, loggedInUsername } = useContext(UserContext);
     const [quizData, setQuizData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const getUrl = `http://localhost:5555/users/${loggedInUsername}`;
+    const getUrl = `http://localhost:5555/quiz/get/${loggedInUsername}`;
     console.log(getUrl);
 
     useEffect(() => {
@@ -103,14 +103,14 @@ const Dashboard = () => {
                             <p>Loading...</p>
                             ) : (
                                 <div className="quizData-cards">
-                                    {quizData.map((quiz, index) => (
+                                    {quizData?.map((quiz, index) => (
                                         <div key={index} className="quizData-card">
                                             <h3>Quiz {index + 1}</h3>
-                                            <p>Subject: {quiz.subject}</p>
-                                            <p>Marks: {quiz.marks}</p>
-                                            <p>Time: {formatTimeToAMPM(quiz.time)}</p>
-                                            <p>Date: {formatDate(quiz.date)}</p>
-                                            <button onClick={() => deleteQuiz(quiz._id)} className='delete-btn'>Delete</button>
+                                            <p>Subject: {quiz?.subject}</p>
+                                            <p>Marks: {quiz?.marks}</p>
+                                            <p>Time: {formatTimeToAMPM(quiz?.time)}</p>
+                                            <p>Date: {formatDate(quiz?.date)}</p>
+                                            <button onClick={() => deleteQuiz(quiz?._id)} className='delete-btn'>Delete</button>
                                         </div>
                                     ))}
                                 </div>
