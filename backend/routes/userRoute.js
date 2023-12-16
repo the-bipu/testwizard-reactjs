@@ -8,7 +8,7 @@ const router = express.Router();
 // Register route
 router.post('/register', async (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, age, gender, phone, fname, lname } = req.body;
 
         // Check if username and email are unique
         const existingUser = await User.findOne({ $or: [{ username }, { email }] });
@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
         }
 
         // Create a new user
-        const user = new User({ username, email, password });
+        const user = new User({ username, email, password, fname, lname, age, gender, phone });
 
         const token = await user.generateAuthToken();
 
