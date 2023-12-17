@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'; // Add this import
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 import { PORT, URI } from "./config.js";
 import mongoose from 'mongoose';
 import filesRoute from './routes/filesRoute.js';
@@ -29,8 +29,8 @@ mongoose
     .connect(URI)
     .then(() => {
         console.log('App connected to database.');
-        app.listen(PORT, () => {
-            console.log(`App is listening to Port: ${PORT}`);
+        app.listen(process.env.PORT || 5555, () => {
+            console.log(`App is listening to Port: ${process.env.PORT}`);
         });
     })
     .catch((error) => {
