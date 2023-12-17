@@ -66,8 +66,8 @@ const Login = () => {
     };
 
     const url = isLogin
-      ? 'http://localhost:5555/users/login'
-      : 'http://localhost:5555/users/register';
+      ? 'https://testwizard-backend.up.railway.app/users/login'
+      : 'https://testwizard-backend.up.railway.app/users/register';
 
     try {
       const formData = isLogin ? loginData : registerData;
@@ -186,11 +186,10 @@ const Login = () => {
                       <div className="gender--div">
                         <label htmlFor="Name" className='label__input'>Gender</label>
                         <select type='text' name="gender" className='gender__input input__box' onChange={handleInputChange} required={!isLogin}>
-                          <option value="Male">------</option>
+                          <option value="">-----</option>
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
                         </select>
-                        {/* <input type="text" name="fname" onChange={handleInputChange} pattern="[0-9]" className="username__input input__box" required={!isLogin} /> */}
                       </div>
                     </div>
 

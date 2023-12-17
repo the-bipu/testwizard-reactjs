@@ -57,7 +57,7 @@ export default function SubjectTest(props) {
         };
     
         // API call to send data to the backend
-        axios.post('http://localhost:5555/quiz/add', userData)
+        axios.post('https://testwizard-backend.up.railway.app/quiz/add', userData)
             .then(response => {
                 console.log('Data sent to the database:', response.data);
             })
