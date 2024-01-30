@@ -14,8 +14,8 @@ const Dashboard = () => {
 
     const [logOutTriggered, setLogOutTriggered] = useState(false);
 
-    const getUrl = `https://testwizard-backend.up.railway.app/quiz/get/${loggedInUsername}`;
-    const userUrl = `https://testwizard-backend.up.railway.app/users/${loggedInUsername}`;
+    const getUrl = `https://testwizard-backend.vercel.app/quiz/get/${loggedInUsername}`;
+    const userUrl = `https://testwizard-backend.vercel.app/users/${loggedInUsername}`;
 
     const showPopUp = () => {
         setLogOutTriggered(!logOutTriggered);
@@ -53,7 +53,7 @@ const Dashboard = () => {
 
     const deleteQuiz = async (quizId) => {
         try {
-            const response = await axios.delete(`https://testwizard-backend.up.railway.app/quiz/delete/${quizId}`);
+            const response = await axios.delete(`https://testwizard-backend.vercel.app/quiz/delete/${quizId}`);
             console.log(response.data.message);
             setQuizData(quizData.filter(quiz => quiz._id !== quizId));
         } catch (error) {
@@ -95,7 +95,7 @@ const Dashboard = () => {
                                         <div className="userData-cards">
                                             <div className="userData-card">
                                                 <i className="fas fa-user"></i>
-                                                <h3>{loggedInUsername}</h3>
+                                                <h3>Hello, {loggedInUsername}</h3>
 
                                                 <h3>{userData?.fname} {userData?.lname}</h3>
                                                 <p>Email: {userData?.email}</p>

@@ -66,8 +66,8 @@ const Login = () => {
     };
 
     const url = isLogin
-      ? 'https://testwizard-backend.up.railway.app/users/login'
-      : 'https://testwizard-backend.up.railway.app/users/register';
+      ? 'https://testwizard-backend.vercel.app/users/login'
+      : 'https://testwizard-backend.vercel.app/users/register';
 
     try {
       const formData = isLogin ? loginData : registerData;
